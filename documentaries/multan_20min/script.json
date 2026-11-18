@@ -18,49 +18,70 @@
           "narration": "Before the Roman Republic crowned its first emperor, before the great stone palaces of Persepolis rose above the Persian desert, there was a city in the fertile plains of Punjab whose wealth and power defied the ages.",
           "visual_prompt": "epic cinematic wide angle painting, ancient massive walled citadel of Multan sitting atop a colossal ancient mound, glowing sunrise illuminating golden brick bastions, morning mist over Chenab river, 8k resolution, matte painting",
           "duration_sec": 9.5,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 1,
+          "chapter_title": "Prologue: The Fortress That Empires Bled For",
+          "actual_duration_sec": 12.67
         },
         {
           "scene_id": 2,
           "narration": "This is Multan. A city that has survived for over five thousand continuous years, witnessing the rise and fall of thirty distinct dynasties and enduring more than thirty catastrophic sieges.",
           "visual_prompt": "aerial panoramic view of ancient Multan, sprawling bazaar streets, high brick battlements, ancient travelers and camel caravans arriving at the fortified gates, photorealistic historical painting",
           "duration_sec": 9.5,
-          "motion": "pan_right"
+          "motion": "pan_right",
+          "chapter_id": 1,
+          "chapter_title": "Prologue: The Fortress That Empires Bled For",
+          "actual_duration_sec": 12.7
         },
         {
           "scene_id": 3,
           "narration": "Alexander the Great nearly met his death beneath its towering walls. The Umayyad caliphate discovered so much treasure within its vaults they named it the 'Frontier House of Gold.'",
           "visual_prompt": "split visual composition, left side showing Macedonian warriors in bronze armor looking up at impenetrable walls, right side showing Arab cavalry inspecting subterranean gold chests, dramatic contrast lighting",
           "duration_sec": 9.5,
-          "motion": "zoom_out"
+          "motion": "zoom_out",
+          "chapter_id": 1,
+          "chapter_title": "Prologue: The Fortress That Empires Bled For",
+          "actual_duration_sec": 11.45
         },
         {
           "scene_id": 4,
           "narration": "Mahmud of Ghazni stormed its gates with fury. The Mongol hordes of Genghis Khan were repeatedly repelled on its blood-soaked outskirts, shielding the rest of India from utter destruction.",
           "visual_prompt": "ferocious medieval siege warfare, catapults firing burning pitch against massive brick bastions, armored warriors clashing on ramparts, smoke and fiery embers against an ominous stormy sky",
           "duration_sec": 9.5,
-          "motion": "pan_left"
+          "motion": "pan_left",
+          "chapter_id": 1,
+          "chapter_title": "Prologue: The Fortress That Empires Bled For",
+          "actual_duration_sec": 11.81
         },
         {
           "scene_id": 5,
           "narration": "Later, it transformed from a fortress of war into the spiritual capital of Sufi mysticism—crowned by magnificent terracotta shrines and radiant cobalt blue tiles.",
           "visual_prompt": "peaceful aerial view of the illuminated shrine of Shah Rukn-e-Alam, glowing turquoise and cobalt blue kashigari glazed tilework, white doves soaring against twilight purple sky, serene spiritual majesty",
           "duration_sec": 9.5,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 1,
+          "chapter_title": "Prologue: The Fortress That Empires Bled For",
+          "actual_duration_sec": 10.82
         },
         {
           "scene_id": 6,
           "narration": "Then, in the 19th century, it was battered by the legendary bronze cannon of Maharaja Ranjit Singh, and shattered in 1848 by an explosion of five hundred thousand pounds of gunpowder.",
           "visual_prompt": "historic 19th century battle scene, massive bronze cannon Zamzama firing a devastating blast toward fortress walls, cloud of thick white smoke, catastrophic stone breach, historical realism",
           "duration_sec": 10.0,
-          "motion": "zoom_out"
+          "motion": "zoom_out",
+          "chapter_id": 1,
+          "chapter_title": "Prologue: The Fortress That Empires Bled For",
+          "actual_duration_sec": 12.53
         },
         {
           "scene_id": 7,
           "narration": "Why did every empire on Earth bleed to possess this single city? What secrets were buried beneath its earthen mounds? Welcome to the definitive chronicle of Multan: The City of Gold, Saints, and Blood.",
           "visual_prompt": "dramatic documentary title sequence, ancient bronze seal and lapis lazuli emblem of Multan spinning slowly amidst floating embers, golden cinematic calligraphy reading 'MULTAN: 5000 YEARS', cinematic dark background",
           "duration_sec": 10.5,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 1,
+          "chapter_title": "Prologue: The Fortress That Empires Bled For",
+          "actual_duration_sec": 14.33
         }
       ]
     },
@@ -73,56 +94,80 @@
           "narration": "To understand Multan, one must first understand its geography. It lies near the critical confluence where the mighty rivers of Punjab—the Chenab, Ravi, Jhelum, and Sutlej—unite before draining into the Arabian Sea.",
           "visual_prompt": "ancient illuminated parchment cartography map, glowing golden river arteries branching across Punjab, converging near the fortified citadel of Multan, compass rose and ink topography",
           "duration_sec": 9.5,
-          "motion": "zoom_out"
+          "motion": "zoom_out",
+          "chapter_id": 2,
+          "chapter_title": "Act I: Mulasthana & The Colossal Sun Temple",
+          "actual_duration_sec": 15.65
         },
         {
           "scene_id": 9,
           "narration": "Whoever controlled Multan held the absolute choke point of trade and military mobility between Central Asia, Persia, the Indus delta, and the fertile plains of northern India.",
           "visual_prompt": "strategic hilltop fortress overlooking endless trade caravans crossing river bridges, horsemen galloping along royal post roads, bustling river trade boats carrying grain and silk, historic panorama",
           "duration_sec": 9.5,
-          "motion": "pan_right"
+          "motion": "pan_right",
+          "chapter_id": 2,
+          "chapter_title": "Act I: Mulasthana & The Colossal Sun Temple",
+          "actual_duration_sec": 11.06
         },
         {
           "scene_id": 10,
           "narration": "In ancient Sanskrit chronicles, the settlement was named Mulasthana, meaning 'the primary sanctuary' or 'the original seat.'",
           "visual_prompt": "ancient Vedic age temple town at dawn, priests in white and saffron robes chanting hymns by the riverbank, sacred sacrificial fire altars glowing, tranquil river reflections",
           "duration_sec": 9.0,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 2,
+          "chapter_title": "Act I: Mulasthana & The Colossal Sun Temple",
+          "actual_duration_sec": 8.47
         },
         {
           "scene_id": 11,
           "narration": "Legend recounts that Samba, the prince and son of Lord Krishna, was afflicted by a terrible illness. Seeking healing, he prayed to Surya, the Vedic Sun God.",
           "visual_prompt": "dramatic mythical scene, prince Samba kneeling in humble prayer beside the flowing waters of the river Chandrabhaga, morning sunbeams breaking through dramatic mist and illuminating his face",
           "duration_sec": 9.5,
-          "motion": "pan_left"
+          "motion": "pan_left",
+          "chapter_id": 2,
+          "chapter_title": "Act I: Mulasthana & The Colossal Sun Temple",
+          "actual_duration_sec": 11.83
         },
         {
           "scene_id": 12,
           "narration": "Upon being miraculously cured, Samba constructed the fabled Aditya Sun Temple of Multan—an architectural marvel that would astonish travelers for over two millennia.",
           "visual_prompt": "magnificent ancient Sun Temple of Multan rising grandly against the desert horizon, intricately carved red sandstone spires, golden flagpoles, thousands of stone carved steps crowded with pilgrims",
           "duration_sec": 9.5,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 2,
+          "chapter_title": "Act I: Mulasthana & The Colossal Sun Temple",
+          "actual_duration_sec": 10.58
         },
         {
           "scene_id": 13,
           "narration": "Inside the innermost sanctuary stood an awe-inspiring idol of Surya, cast from solid refined gold. Its eyes were two massive pigeon-blood rubies that seemed to glow in total darkness.",
           "visual_prompt": "interior sanctum of the Sun Temple, life-sized golden statue of the Sun God seated on a seven-horse chariot, gleaming rubies for eyes flashing with mystical red light, hanging silver oil lamps",
           "duration_sec": 10.0,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 2,
+          "chapter_title": "Act I: Mulasthana & The Colossal Sun Temple",
+          "actual_duration_sec": 12.46
         },
         {
           "scene_id": 14,
           "narration": "Chinese Buddhist pilgrims, including the famed Xuanzang in the 7th century, visited Multan and wrote in amazement of the temple's sheer scale, surrounded by ponds, flower gardens, and jewels.",
           "visual_prompt": "the Chinese monk Xuanzang in pilgrim robes with travel pack and scroll, standing in awe before the golden temple compound of Multan, monks and attendants bowing, historical travel diary aesthetic",
           "duration_sec": 10.0,
-          "motion": "pan_right"
+          "motion": "pan_right",
+          "chapter_id": 2,
+          "chapter_title": "Act I: Mulasthana & The Colossal Sun Temple",
+          "actual_duration_sec": 12.74
         },
         {
           "scene_id": 15,
           "narration": "Vast wealth poured into the temple treasury every day from across Asia. But this unimaginable accumulation of gold also drew the hungry gaze of every warlord in the ancient world.",
           "visual_prompt": "temple treasury chamber, wooden chests overflowing with gold coins, pearl necklaces, and jeweled offerings, torchlight casting ominous long shadows on the stone walls, sense of impending doom",
           "duration_sec": 9.5,
-          "motion": "zoom_out"
+          "motion": "zoom_out",
+          "chapter_id": 2,
+          "chapter_title": "Act I: Mulasthana & The Colossal Sun Temple",
+          "actual_duration_sec": 11.74
         }
       ]
     },
@@ -135,84 +180,120 @@
           "narration": "In the winter of 326 BCE, the greatest conqueror of the Western world marched his exhausted army down the rivers of Punjab: Alexander III of Macedon.",
           "visual_prompt": "Alexander the Great in gleaming gilded armor riding his black warhorse Bucephalus along the arid plains of Punjab, Macedonian cavalry and phalanxes marching in endless disciplined columns",
           "duration_sec": 9.5,
-          "motion": "pan_left"
+          "motion": "pan_left",
+          "chapter_id": 3,
+          "chapter_title": "Act II: Alexander the Great & The Mallian Massacre (326 BCE)",
+          "actual_duration_sec": 11.04
         },
         {
           "scene_id": 17,
           "narration": "His soldiers had mutinied at the Hyphasis river, refusing to push on toward the Ganges. Reluctantly turning southward toward the sea, Alexander encountered the fiercest warriors in India: the Malli.",
           "visual_prompt": "intense council of war in the royal tent, Alexander glaring at map scrolls while battle-hardened Greek commanders argue, outside soldiers resting beside long pikes, tense military atmosphere",
           "duration_sec": 9.5,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 3,
+          "chapter_title": "Act II: Alexander the Great & The Mallian Massacre (326 BCE)",
+          "actual_duration_sec": 13.22
         },
         {
           "scene_id": 18,
           "narration": "The Malli had fortified themselves behind the towering baked-brick walls of their primary citadel—identified by historians as the ancient fortress of Multan.",
           "visual_prompt": "the imposing ancient fortress of the Malli atop the high mound of Multan, defenders standing on the crenellations holding heavy longbows and broad iron-tipped spears, wind whipping dust clouds",
           "duration_sec": 9.0,
-          "motion": "zoom_out"
+          "motion": "zoom_out",
+          "chapter_id": 3,
+          "chapter_title": "Act II: Alexander the Great & The Mallian Massacre (326 BCE)",
+          "actual_duration_sec": 9.84
         },
         {
           "scene_id": 19,
           "narration": "Furious that the siege was dragging on and sensing hesitation among his troops, Alexander grabbed a wooden ladder, scrambled up the wall himself, and stood alone on the parapet.",
           "visual_prompt": "Alexander the Great scaling a siege ladder under arrow fire, reaching the top of the citadel rampart, his crimson cloak whipping in the storm, shouting battle cries to his men below",
           "duration_sec": 10.0,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 3,
+          "chapter_title": "Act II: Alexander the Great & The Mallian Massacre (326 BCE)",
+          "actual_duration_sec": 10.85
         },
         {
           "scene_id": 20,
           "narration": "Under the weight of soldiers rushing to follow him, the ladders snapped. Alexander was now stranded on top of the enemy wall, silhouetted against the sky as hundreds of arrows converged on him.",
           "visual_prompt": "dramatic catastrophe, the wooden siege ladders splintering and crashing to the ground, Macedonian soldiers falling into the moat, Alexander standing completely isolated on the high wall ledge",
           "duration_sec": 9.5,
-          "motion": "pan_right"
+          "motion": "pan_right",
+          "chapter_id": 3,
+          "chapter_title": "Act II: Alexander the Great & The Mallian Massacre (326 BCE)",
+          "actual_duration_sec": 12.41
         },
         {
           "scene_id": 21,
           "narration": "Rather than jumping backward to safety, Alexander made one of the most audacious gambles in military history: he leaped forward, directly inside the citadel courtyard, alone.",
           "visual_prompt": "breathtaking action shot, Alexander leaping into the interior fortified courtyard of Multan, sword drawn, landing among dozens of astonished Mallian defenders, dust billowing upon impact",
           "duration_sec": 9.5,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 3,
+          "chapter_title": "Act II: Alexander the Great & The Mallian Massacre (326 BCE)",
+          "actual_duration_sec": 10.85
         },
         {
           "scene_id": 22,
           "narration": "Backing against a sacred tree, he fought like a demon, killing the Mallian commander and several champions before only three companions—Peucestas, Leonnatus, and Abreas—managed to scale the wall to join him.",
           "visual_prompt": "ferocious melee around an ancient sacred banyan tree, Alexander parrying curved swords with his xiphos, Abreas struck by a fatal blow, Peucestas holding the sacred Trojan shield of Athena over Alexander",
           "duration_sec": 10.5,
-          "motion": "pan_left"
+          "motion": "pan_left",
+          "chapter_id": 3,
+          "chapter_title": "Act II: Alexander the Great & The Mallian Massacre (326 BCE)",
+          "actual_duration_sec": 13.66
         },
         {
           "scene_id": 23,
           "narration": "Then, a Mallian archer drew a massive three-cubit bow and released a heavy barbed wooden arrow. It struck Alexander with terrifying force, piercing through his bronze armor and deep into his lung.",
           "visual_prompt": "slow-motion dramatic impact, a heavy arrow hitting Alexander's cuirass with a spark, puncturing through into his chest, air and blood escaping, Alexander collapsing to his knees clutching his side",
           "duration_sec": 10.5,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 3,
+          "chapter_title": "Act II: Alexander the Great & The Mallian Massacre (326 BCE)",
+          "actual_duration_sec": 12.72
         },
         {
           "scene_id": 24,
           "narration": "Seeing their king mortally wounded, the Macedonian army went into a blind frenzy. They tore at the brick walls with their bare hands, shattered the gates, and slaughtered every defender inside.",
           "visual_prompt": "raging Macedonian phalanx smashing through the breached wooden gates with battering rams, thousands of enraged soldiers pouring in with swords and spears, smoke and burning fires consuming the fortress",
           "duration_sec": 10.0,
-          "motion": "zoom_out"
+          "motion": "zoom_out",
+          "chapter_id": 3,
+          "chapter_title": "Act II: Alexander the Great & The Mallian Massacre (326 BCE)",
+          "actual_duration_sec": 12.58
         },
         {
           "scene_id": 25,
           "narration": "Alexander barely survived the crude battlefield surgery to cut out the arrow, but his health was permanently broken. Multan had struck the blow that would claim the conqueror's life just two years later in Babylon.",
           "visual_prompt": "Alexander lying pale on a military stretcher being carried onto a royal barge on the Chenab river, looking back at the smoking ruins of Multan with somber eyes, sunset casting gold and blood red reflections",
           "duration_sec": 10.5,
-          "motion": "pan_right"
+          "motion": "pan_right",
+          "chapter_id": 3,
+          "chapter_title": "Act II: Alexander the Great & The Mallian Massacre (326 BCE)",
+          "actual_duration_sec": 13.08
         },
         {
           "scene_id": 26,
           "narration": "Greek physician Critodemus of Cos cut open Alexander's ribcage with a scalpel while his officers held the screaming king down, extracting the three-inch barbed arrowhead in a pool of blood.",
           "visual_prompt": "intense historical scene inside the royal tent, physician Critodemus operating on Alexander the Great by torchlight, generals holding the wounded king, raw ancient medical drama",
           "duration_sec": 10.5,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 3,
+          "chapter_title": "Act II: Alexander the Great & The Mallian Massacre (326 BCE)",
+          "actual_duration_sec": 11.26
         },
         {
           "scene_id": 27,
           "narration": "To quell rumors among the army that Alexander had perished, the commanders carried him on a shield onto the deck of his royal flagship, where he raised his hand to thunderous weeping and cheering.",
           "visual_prompt": "Alexander the Great lying on his shield aboard a royal galley on the Chenab river, weakly raising his arm to thousands of Macedonian soldiers lining the riverbanks shouting with joy",
           "duration_sec": 10.5,
-          "motion": "pan_right"
+          "motion": "pan_right",
+          "chapter_id": 3,
+          "chapter_title": "Act II: Alexander the Great & The Mallian Massacre (326 BCE)",
+          "actual_duration_sec": 10.99
         }
       ]
     },
@@ -225,98 +306,140 @@
           "narration": "For centuries following Alexander's departure, Multan was governed by the Mauryan Empire, the Indo-Greeks, the Kushans, and the White Huns, absorbing cultures like layers of rich sediment.",
           "visual_prompt": "historical visual montage of different coinages and sculptures found in Multan: Kushan gold coins, Greek bilingual inscriptions, Gupta terracotta seals, artistic archaeological showcase",
           "duration_sec": 9.5,
-          "motion": "zoom_out"
+          "motion": "zoom_out",
+          "chapter_id": 4,
+          "chapter_title": "Act III: The House of Gold: Umayyads & The Independent Emirate",
+          "actual_duration_sec": 12.31
         },
         {
           "scene_id": 29,
           "narration": "By the early 8th century, the city was the northern stronghold of the Hindu Brahmin dynasty of Raja Dahir, ruling over Sindh and southern Punjab.",
           "visual_prompt": "royal palace courtyard of Raja Dahir in Multan, ornate carved teakwood balconies, caparisoned war elephants with gilded tusks standing in courtyards, court astrologers and guards",
           "duration_sec": 9.0,
-          "motion": "pan_left"
+          "motion": "pan_left",
+          "chapter_id": 4,
+          "chapter_title": "Act III: The House of Gold: Umayyads & The Independent Emirate",
+          "actual_duration_sec": 9.19
         },
         {
           "scene_id": 30,
           "narration": "In 711 CE, the Umayyad Caliphate dispatched a brilliant seventeen-year-old commander, Muhammad bin Qasim, to pacify the frontier and secure the maritime trade lanes.",
           "visual_prompt": "Muhammad bin Qasim in white Arab robes and mail armor on an Arabian stallion, reviewing thousands of desert cavalry and Syrian infantry, black and white banners unfurled against the desert horizon",
           "duration_sec": 9.5,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 4,
+          "chapter_title": "Act III: The House of Gold: Umayyads & The Independent Emirate",
+          "actual_duration_sec": 11.74
         },
         {
           "scene_id": 31,
           "narration": "After defeating Raja Dahir near the Indus, Qasim pushed north toward the formidable prize: the walled citadel of Multan.",
           "visual_prompt": "the Arab army marching through sandy acacia scrubland toward the high fortified ridge of Multan, siege engines and catapult wagons following behind, intense midday desert heat shimmer",
           "duration_sec": 9.0,
-          "motion": "pan_right"
+          "motion": "pan_right",
+          "chapter_id": 4,
+          "chapter_title": "Act III: The House of Gold: Umayyads & The Independent Emirate",
+          "actual_duration_sec": 8.3
         },
         {
           "scene_id": 32,
           "narration": "The defenders resisted behind the massive brick ramparts for two exhausting months, inflicting heavy casualties on the Arab besiegers.",
           "visual_prompt": "Arab catapult 'Al-Urus' (The Bride) hurling heavy stones at the fortress walls, archers trading fire from siege towers, intense dust and flying masonry fragments",
           "duration_sec": 9.0,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 4,
+          "chapter_title": "Act III: The House of Gold: Umayyads & The Independent Emirate",
+          "actual_duration_sec": 8.52
         },
         {
           "scene_id": 33,
           "narration": "The siege broke when a local informant revealed the secret conduit that supplied drinking water to the citadel from a nearby lake. Qasim severed the water supply, forcing the garrison to surrender.",
           "visual_prompt": "Arab engineers and sappers uncovering a subterranean stone water channel in the dry earth, cutting off the flow of fresh water with timber dams, defenders on the walls looking down in despair",
           "duration_sec": 9.5,
-          "motion": "pan_left"
+          "motion": "pan_left",
+          "chapter_id": 4,
+          "chapter_title": "Act III: The House of Gold: Umayyads & The Independent Emirate",
+          "actual_duration_sec": 12.53
         },
         {
           "scene_id": 34,
           "narration": "Inside the captured fortress, Qasim was led to a hidden vault beneath the Sun Temple. The chamber was packed with so many tons of pure gold ingots and jewels that the Umayyads could scarcely weigh it.",
           "visual_prompt": "dramatic discovery scene, soldiers holding torches illuminating a subterranean vault filled to the ceiling with glittering gold ingots, ancient bronze jars brimming with pearls and rubies",
           "duration_sec": 10.5,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 4,
+          "chapter_title": "Act III: The House of Gold: Umayyads & The Independent Emirate",
+          "actual_duration_sec": 12.36
         },
         {
           "scene_id": 35,
           "narration": "Two hundred and thirty tons of gold were shipped to Damascus to the Caliph's treasury, and Qasim christened the city 'Faraj Bayt al-Dhahab'—The Frontier House of Gold.",
           "visual_prompt": "caravan of hundreds of camels laden with heavy wooden chests of gold traveling west across the desert dunes toward Damascus, sunset sky ablaze with golden and amber hues",
           "duration_sec": 9.5,
-          "motion": "pan_right"
+          "motion": "pan_right",
+          "chapter_id": 4,
+          "chapter_title": "Act III: The House of Gold: Umayyads & The Independent Emirate",
+          "actual_duration_sec": 10.42
         },
         {
           "scene_id": 36,
           "narration": "Remarkably, Qasim left the Sun Temple intact, respecting the local faith and utilizing the pilgrim tax revenues to fund the regional administration.",
           "visual_prompt": "Muhammad bin Qasim signing a treaty scroll granting religious protection to local citizens and priests in a stone pavilion, respectful diplomatic encounter between cultures",
           "duration_sec": 9.0,
-          "motion": "zoom_out"
+          "motion": "zoom_out",
+          "chapter_id": 4,
+          "chapter_title": "Act III: The House of Gold: Umayyads & The Independent Emirate",
+          "actual_duration_sec": 9.58
         },
         {
           "scene_id": 37,
           "narration": "By the 9th century, as the Abbasid Caliphate fractured, Multan broke away to become an independent sovereign emirate under the Banu Munabbih dynasty.",
           "visual_prompt": "the grand palace of the independent Emir of Multan, guards in mail coats, gold coins struck with the Emir's name in Arabic calligraphy resting on blue velvet, sovereign prestige",
           "duration_sec": 9.0,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 4,
+          "chapter_title": "Act III: The House of Gold: Umayyads & The Independent Emirate",
+          "actual_duration_sec": 9.55
         },
         {
           "scene_id": 38,
           "narration": "Arabic geographer Al-Masudi visited Multan in 915 CE and described it as one of the most prosperous hubs of the Islamic world, where Muslim merchants and Hindu pilgrims lived side by side.",
           "visual_prompt": "vibrant multiversal market in medieval Multan, merchants in silk turbans trading cinnamon, silk, and perfume with Indian artisans, grand arched entrance to the bazaar, peaceful bustling trade",
           "duration_sec": 10.0,
-          "motion": "pan_left"
+          "motion": "pan_left",
+          "chapter_id": 4,
+          "chapter_title": "Act III: The House of Gold: Umayyads & The Independent Emirate",
+          "actual_duration_sec": 12.12
         },
         {
           "scene_id": 39,
           "narration": "In the late 10th century, the city transitioned into an Ismaili Qarmatian state, forging close spiritual and diplomatic ties with the Fatimid Caliphate in Cairo.",
           "visual_prompt": "Fatimid envoys in green robes presenting letters bearing golden royal seals to the council of Multan, intricate geometric Islamic architecture, mosaic courtyards, intellectual grandeur",
           "duration_sec": 9.5,
-          "motion": "zoom_out"
+          "motion": "zoom_out",
+          "chapter_id": 4,
+          "chapter_title": "Act III: The House of Gold: Umayyads & The Independent Emirate",
+          "actual_duration_sec": 10.49
         },
         {
           "scene_id": 40,
           "narration": "Famous 10th-century geographer Ibn Hawqal recorded that Multan was half the size of Baghdad, defended by ten massive iron gates and a moat fed directly from the river.",
           "visual_prompt": "medieval Arab traveler Ibn Hawqal sketching the fortifications of Multan on parchment, overlooking the deep moat and colossal spiked iron gate towers, historical cartography aesthetics",
           "duration_sec": 10.0,
-          "motion": "zoom_out"
+          "motion": "zoom_out",
+          "chapter_id": 4,
+          "chapter_title": "Act III: The House of Gold: Umayyads & The Independent Emirate",
+          "actual_duration_sec": 10.54
         },
         {
           "scene_id": 41,
           "narration": "Specialized caravans carrying raw silk, emeralds, and Persian perfume departed weekly from Multan's gates, traveling through the Bolan and Gomal passes toward Central Asia.",
           "visual_prompt": "long merchant caravan leaving the arched portal of Multan at dawn, pack mules and camels laden with silk bolts and brass lanterns, departing into the golden desert morning",
           "duration_sec": 9.5,
-          "motion": "pan_left"
+          "motion": "pan_left",
+          "chapter_id": 4,
+          "chapter_title": "Act III: The House of Gold: Umayyads & The Independent Emirate",
+          "actual_duration_sec": 11.09
         }
       ]
     },
@@ -329,84 +452,120 @@
           "narration": "The golden age of the independent emirate came to a violent end at the turn of the eleventh century with the rise of Mahmud, Sultan of Ghazni.",
           "visual_prompt": "Sultan Mahmud of Ghazni in steel conical helmet and lamellar armor, reviewing his vast winter army in the mountain passes, dark raven banners flapping in the freezing gale, chilling presence",
           "duration_sec": 9.5,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 5,
+          "chapter_title": "Act IV: The Invasions of Fire & The Mongol Shield",
+          "actual_duration_sec": 8.33
         },
         {
           "scene_id": 43,
           "narration": "Mahmud regarded the Ismaili rulers of Multan as heretics. In 1005 CE, he crossed the Indus, surrounded the city, and subjected it to a merciless siege.",
           "visual_prompt": "Ghaznavid siege camps encircling the high walls of Multan, iron-tipped siege towers rolling toward the brick battlements, archers firing fiery arrows through the night sky",
           "duration_sec": 9.5,
-          "motion": "pan_right"
+          "motion": "pan_right",
+          "chapter_id": 5,
+          "chapter_title": "Act IV: The Invasions of Fire & The Mongol Shield",
+          "actual_duration_sec": 12.53
         },
         {
           "scene_id": 44,
           "narration": "The city fell. The ruler Abul Fateh Dawood was imprisoned, and Multan was stripped of its autonomy, becoming an eastern frontier outpost of the Ghaznavid Empire.",
           "visual_prompt": "Ghaznavid heavy cavalry riding through the breached ramparts, captive nobles led away in chains, smoldering fires across the upper citadel, harsh realities of conquest",
           "duration_sec": 9.0,
-          "motion": "pan_left"
+          "motion": "pan_left",
+          "chapter_id": 5,
+          "chapter_title": "Act IV: The Invasions of Fire & The Mongol Shield",
+          "actual_duration_sec": 11.26
         },
         {
           "scene_id": 45,
           "narration": "During these upheavals, the ancient Sun Temple of Aditya was destroyed, ending a sacred tradition that had endured for over two thousand years.",
           "visual_prompt": "the ruins of the ancient Sun Temple, toppled stone pillars lying in dust, smoke drifting across shattered sandstone carvings, end of an ancient era, melancholic historical mood",
           "duration_sec": 9.5,
-          "motion": "zoom_out"
+          "motion": "zoom_out",
+          "chapter_id": 5,
+          "chapter_title": "Act IV: The Invasions of Fire & The Mongol Shield",
+          "actual_duration_sec": 8.83
         },
         {
           "scene_id": 46,
           "narration": "Two centuries later, a cataclysm of unimaginable magnitude gathered beyond the Pamir mountains: the Mongol storm.",
           "visual_prompt": "vast Mongol cavalry tumens riding across the barren horizon under a blood-red sunset sky, fur caps, composite bows, thousand-mile dust clouds rising behind them, apocalyptic dread",
           "duration_sec": 9.5,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 5,
+          "chapter_title": "Act IV: The Invasions of Fire & The Mongol Shield",
+          "actual_duration_sec": 7.94
         },
         {
           "scene_id": 47,
           "narration": "Between 1221 and 1300, the Mongol Empire launched repeated devastating invasions into South Asia. The fortress of Multan was the frontline shield of the entire subcontinent.",
           "visual_prompt": "defensive war council of the Delhi Sultanate atop Multan's fortress, heavily armored Mamluk generals looking out over scorched plains, banners of Sultan Balban fluttering high",
           "duration_sec": 9.5,
-          "motion": "pan_right"
+          "motion": "pan_right",
+          "chapter_id": 5,
+          "chapter_title": "Act IV: The Invasions of Fire & The Mongol Shield",
+          "actual_duration_sec": 12.98
         },
         {
           "scene_id": 48,
           "narration": "If Multan fell, there was no natural barrier between the Indus river and Delhi. The entire civilization of northern India would be put to the sword, just as Baghdad and Bukhara had been annihilated.",
           "visual_prompt": "dramatic illustration showing the flaming ruins of Bukhara and Baghdad on the left, contrasting with the defiant unbreached brick walls of Multan standing firm on the right, high symbolic power",
           "duration_sec": 10.0,
-          "motion": "zoom_out"
+          "motion": "zoom_out",
+          "chapter_id": 5,
+          "chapter_title": "Act IV: The Invasions of Fire & The Mongol Shield",
+          "actual_duration_sec": 12.96
         },
         {
           "scene_id": 49,
           "narration": "Sultan Balban appointed his most capable son, Prince Muhammad Sultan—known as the patron of poets and master of arms—as Viceroy of Multan.",
           "visual_prompt": "Prince Muhammad Sultan in ornate mail coat and royal turban, sitting in the Multan court with poet Amir Khusrau reading poetry, while scouts arrive breathless with urgent battle reports",
           "duration_sec": 10.0,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 5,
+          "chapter_title": "Act IV: The Invasions of Fire & The Mongol Shield",
+          "actual_duration_sec": 10.06
         },
         {
           "scene_id": 50,
           "narration": "In 1285 CE, a massive Mongol force under general Timur Khan crossed the river Ravi. Prince Muhammad marched out of Multan to meet them in decisive open battle.",
           "visual_prompt": "colossal collision of armies on the plains outside Multan, armored Delhi cavalry clashing with Mongol horse archers in swirling dust, flying arrows darkening the sky, epic historical collision",
           "duration_sec": 10.0,
-          "motion": "pan_left"
+          "motion": "pan_left",
+          "chapter_id": 5,
+          "chapter_title": "Act IV: The Invasions of Fire & The Mongol Shield",
+          "actual_duration_sec": 11.98
         },
         {
           "scene_id": 51,
           "narration": "The battle was ferocious. Just as the Mongols were breaking into retreat, Prince Muhammad stopped to perform the midday prayers by a riverbank and was ambushed by a hidden Mongol detachment.",
           "visual_prompt": "tragic battlefield moment, Prince Muhammad fighting desperately with his personal guard beside the riverbank, surrounded by Mongol archers firing volleys from horseback, dramatic heroism",
           "duration_sec": 10.5,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 5,
+          "chapter_title": "Act IV: The Invasions of Fire & The Mongol Shield",
+          "actual_duration_sec": 11.98
         },
         {
           "scene_id": 52,
           "narration": "The prince was slain, earning the posthumous title 'Khan-i-Shaheed'—The Martyr Prince. Delhi wept in agony, but the Mongol army was so severely crippled that they abandoned their invasion.",
           "visual_prompt": "solemn funeral procession carrying the fallen Prince Muhammad back into the fortress of Multan, thousands of weeping soldiers with lowered banners, sunset casting deep shadows on the ramparts",
           "duration_sec": 10.5,
-          "motion": "zoom_out"
+          "motion": "zoom_out",
+          "chapter_id": 5,
+          "chapter_title": "Act IV: The Invasions of Fire & The Mongol Shield",
+          "actual_duration_sec": 12.31
         },
         {
           "scene_id": 53,
           "narration": "Multan had paid in royal blood, but it had saved South Asia. The fortress stood tall and unbowed.",
           "visual_prompt": "unbroken high fortress towers of Multan silhouetted against twilight stars, guards watching over the quiet peaceful plains below, enduring strength and victory",
           "duration_sec": 9.0,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 5,
+          "chapter_title": "Act IV: The Invasions of Fire & The Mongol Shield",
+          "actual_duration_sec": 7.85
         }
       ]
     },
@@ -419,84 +578,120 @@
           "narration": "Bloodied by a thousand years of endless warfare, Multan underwent a profound transformation in the 13th and 14th centuries. It laid down the sword and opened its arms to the divine.",
           "visual_prompt": "golden morning light washing over the city of Multan, swords and broken armors slowly being overgrown with blooming desert flowers, spiritual metamorphosis, painterly style",
           "duration_sec": 9.5,
-          "motion": "pan_right"
+          "motion": "pan_right",
+          "chapter_id": 6,
+          "chapter_title": "Act V: The City of Saints & The Kashigari Blue Renaissance",
+          "actual_duration_sec": 12.05
         },
         {
           "scene_id": 55,
           "narration": "From Baghdad, Khwarezm, and Iran, Sufi saints and scholars sought refuge in Multan, fleeing the Mongol devastation of Central Asia. The city became known as 'Madinat-ul-Awliya'—The City of Saints.",
           "visual_prompt": "caravan of peaceful Sufi dervishes in flowing woolen cloaks and turbans arriving at the arched gates of Multan, greeted by citizens offering dates and cool river water, serene homecoming",
           "duration_sec": 10.0,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 6,
+          "chapter_title": "Act V: The City of Saints & The Kashigari Blue Renaissance",
+          "actual_duration_sec": 14.5
         },
         {
           "scene_id": 56,
           "narration": "The greatest pioneer of this golden age was Sheikh Bahauddin Zakariya, founder of the Suhrawardi Sufi order in the subcontinent.",
           "visual_prompt": "venerable saint Bahauddin Zakariya with long white beard and radiant serene countenance, teaching hundreds of eager students seated on carpets in a grand brick courtyard",
           "duration_sec": 9.5,
-          "motion": "pan_left"
+          "motion": "pan_left",
+          "chapter_id": 6,
+          "chapter_title": "Act V: The City of Saints & The Kashigari Blue Renaissance",
+          "actual_duration_sec": 8.06
         },
         {
           "scene_id": 57,
           "narration": "Zakariya was not merely a spiritual master; he was a master statesman and merchant who established an international trade network and fed thousands from his public kitchens every day.",
           "visual_prompt": "the bustling open charitable kitchen (langar) of Bahauddin Zakariya, huge cauldrons of spiced rice and lentils bubbling over wood fires, feeding rich merchants and poor travelers alike",
           "duration_sec": 10.0,
-          "motion": "zoom_out"
+          "motion": "zoom_out",
+          "chapter_id": 6,
+          "chapter_title": "Act V: The City of Saints & The Kashigari Blue Renaissance",
+          "actual_duration_sec": 10.68
         },
         {
           "scene_id": 58,
           "narration": "Beside him stood the enigmatic figure of Shams Tabrizi, the spiritual mentor of the great poet Rumi, whose final resting place in Multan remains a vortex of ecstatic devotion.",
           "visual_prompt": "shrine of Shams Tabrizi in Multan, whirling dervishes in white robes lost in mystical dance, incense smoke curling upward, vibrant floral offerings, mystical spiritual atmosphere",
           "duration_sec": 10.0,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 6,
+          "chapter_title": "Act V: The City of Saints & The Kashigari Blue Renaissance",
+          "actual_duration_sec": 11.04
         },
         {
           "scene_id": 59,
           "narration": "In the early 14th century, Delhi Sultan Ghiyasuddin Tughlaq commissioned what would become the undisputed architectural jewel of South Asia: the Tomb of Shah Rukn-e-Alam, the grandson of Zakariya.",
           "visual_prompt": "medieval architects and bricklayers constructing the massive octagonal walls of the tomb of Shah Rukn-e-Alam, wooden scaffolds around the soaring drum, master artisans carving glazed tiles",
           "duration_sec": 10.5,
-          "motion": "pan_right"
+          "motion": "pan_right",
+          "chapter_id": 6,
+          "chapter_title": "Act V: The City of Saints & The Kashigari Blue Renaissance",
+          "actual_duration_sec": 12.12
         },
         {
           "scene_id": 60,
           "narration": "Rising nearly one hundred and twenty feet above the citadel mound, its design is breathtaking: an octagonal lower tier with battering, sloping fortress walls, topped by an octagonal drum and a massive white dome.",
           "visual_prompt": "wide establishing shot of the Tomb of Shah Rukn-e-Alam at dusk, magnificent three-tiered architectural silhouette, corner minarets crowned by turquoise cupolas, glowing against an orange sky",
           "duration_sec": 10.0,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 6,
+          "chapter_title": "Act V: The City of Saints & The Kashigari Blue Renaissance",
+          "actual_duration_sec": 13.32
         },
         {
           "scene_id": 61,
           "narration": "The shrine pioneered the Multani tradition of Kashigari: hand-glazed tiles in striking cobalt blue, turquoise, and creamy white, arranged in intricate geometric and calligraphic friezes.",
           "visual_prompt": "extreme close-up of intricate Kashigari glazed tilework on the tomb exterior, vibrant deep cobalt blue arabesques, turquoise flowers, Qur'anic verses carved in relief, breathtaking artistry",
           "duration_sec": 10.0,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 6,
+          "chapter_title": "Act V: The City of Saints & The Kashigari Blue Renaissance",
+          "actual_duration_sec": 12.43
         },
         {
           "scene_id": 62,
           "narration": "To protect against the region's violent earthquakes, the architects embedded heavy timber beams of shisham wood inside the brick masonry. For over seven hundred years, not a single major crack has formed.",
           "visual_prompt": "cutaway architectural rendering showing the earthquake-resistant shisham wood frame interlocking within the dense terracotta brick layers of the mausoleum, centuries of structural perfection",
           "duration_sec": 10.0,
-          "motion": "zoom_out"
+          "motion": "zoom_out",
+          "chapter_id": 6,
+          "chapter_title": "Act V: The City of Saints & The Kashigari Blue Renaissance",
+          "actual_duration_sec": 13.15
         },
         {
           "scene_id": 63,
           "narration": "Multan was no longer merely a city of war. It was the eternal sanctuary of peace, poetry, and divine light.",
           "visual_prompt": "night view of Multan's illuminated shrines glowing under a starry Punjab night, soft oil lamps flickering along the brick pathways, eternal spiritual peace",
           "duration_sec": 9.0,
-          "motion": "pan_left"
+          "motion": "pan_left",
+          "chapter_id": 6,
+          "chapter_title": "Act V: The City of Saints & The Kashigari Blue Renaissance",
+          "actual_duration_sec": 8.66
         },
         {
           "scene_id": 64,
           "narration": "Legend tells that when the wandering mystic Shams Tabrizi was refused food in the city, he prayed to the sun, calling it down closer to Multan to roast his meal—an enduring folk tale explaining the city's legendary summer heat.",
           "visual_prompt": "mythological folklore painting, saint Shams Tabrizi in ragged robes looking up at a blazing golden sun hovering close above the ancient brick roofs of Multan, ethereal heat mirage shimmering",
           "duration_sec": 10.5,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 6,
+          "chapter_title": "Act V: The City of Saints & The Kashigari Blue Renaissance",
+          "actual_duration_sec": 13.61
         },
         {
           "scene_id": 65,
           "narration": "Multani artisans passed the secrets of Kashigari from father to son across twenty generations, grinding cobalt oxide and quartz into glazes that never lose their brilliance under the harsh desert sun.",
           "visual_prompt": "artisan workshop in old Multan, master potter spinning a kick-wheel, apprentice grinding cobalt blue minerals with mortar and pestle, shelves filled with glazed turquoise vases and tiles",
           "duration_sec": 10.0,
-          "motion": "pan_right"
+          "motion": "pan_right",
+          "chapter_id": 6,
+          "chapter_title": "Act V: The City of Saints & The Kashigari Blue Renaissance",
+          "actual_duration_sec": 12.05
         }
       ]
     },
@@ -509,98 +704,140 @@
           "narration": "In the 16th century, the rising Mughal Empire annexed Multan into its administrative heartland. Emperor Akbar established it as one of the original twelve Subahs—or imperial provinces.",
           "visual_prompt": "Emperor Akbar in royal court attire reviewing the provincial registers of Multan presented by his court ministers, grand marble audience hall, royal peacocks and guards in background",
           "duration_sec": 9.5,
-          "motion": "pan_right"
+          "motion": "pan_right",
+          "chapter_id": 7,
+          "chapter_title": "Act VI: The Clash of Titans: Mughals, Afghans & Ranjit Singh",
+          "actual_duration_sec": 13.06
         },
         {
           "scene_id": 67,
           "narration": "For nearly two centuries under Mughal rule, Multan enjoyed its longest era of uninterrupted peace. It became the industrial engine of the empire, famous for fine indigo dye, silk textiles, and glazed pottery.",
           "visual_prompt": "bustling Mughal era river docks in Multan, workers loading cedar boats with large ceramic jars of indigo dye and bolts of rich embroidered silk, prosperous commercial river port",
           "duration_sec": 10.0,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 7,
+          "chapter_title": "Act VI: The Clash of Titans: Mughals, Afghans & Ranjit Singh",
+          "actual_duration_sec": 15.36
         },
         {
           "scene_id": 68,
           "narration": "Prince Dara Shikoh, the cultured heir of Shah Jahan, served as Governor of Multan. He turned the city into a vibrant center for the synthesis of Hindu Upanishadic philosophy and Islamic Sufism.",
           "visual_prompt": "Prince Dara Shikoh in white muslin robe seated on an elevated terrace overlooking the Chenab river, surrounded by scholars comparing ancient Sanskrit and Persian manuscripts, intellectual harmony",
           "duration_sec": 10.5,
-          "motion": "pan_left"
+          "motion": "pan_left",
+          "chapter_id": 7,
+          "chapter_title": "Act VI: The Clash of Titans: Mughals, Afghans & Ranjit Singh",
+          "actual_duration_sec": 13.37
         },
         {
           "scene_id": 69,
           "narration": "When the Mughal Empire disintegrated after Aurangzeb's death, Multan was plunged back into the crucible of conflict. The Afghan warrior-king Ahmad Shah Durrani invaded in 1752, seizing the province.",
           "visual_prompt": "Afghan Durrani cavalry galloping through the city gates of Multan with drawn tulwars, Ahmad Shah Durrani in chainmail helmet surveying the conquered city, dust clouds rising",
           "duration_sec": 9.5,
-          "motion": "zoom_out"
+          "motion": "zoom_out",
+          "chapter_id": 7,
+          "chapter_title": "Act VI: The Clash of Titans: Mughals, Afghans & Ranjit Singh",
+          "actual_duration_sec": 14.52
         },
         {
           "scene_id": 70,
           "narration": "The Durranis appointed the noble Sadozai clan, led by Nawab Muzaffar Khan, as hereditary governors. For decades, Muzaffar Khan governed with justice, repairing the citadel walls for the storm to come.",
           "visual_prompt": "Nawab Muzaffar Khan in Afghan velvet robes inspecting the rebuilding of Multan's outer stone bastions, stonemasons laying heavy bricks, armed Afghan retainers standing guard",
           "duration_sec": 9.5,
-          "motion": "pan_right"
+          "motion": "pan_right",
+          "chapter_id": 7,
+          "chapter_title": "Act VI: The Clash of Titans: Mughals, Afghans & Ranjit Singh",
+          "actual_duration_sec": 14.09
         },
         {
           "scene_id": 71,
           "narration": "That storm arrived in the form of Maharaja Ranjit Singh—the Lion of Punjab—who forged the mighty Sikh Empire from the fragmented misls of Lahore.",
           "visual_prompt": "Maharaja Ranjit Singh seated cross-legged on a golden throne in Lahore, surrounded by fearsome Akali Nihang warriors, his keen gaze fixed upon a map of Multan",
           "duration_sec": 9.5,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 7,
+          "chapter_title": "Act VI: The Clash of Titans: Mughals, Afghans & Ranjit Singh",
+          "actual_duration_sec": 10.01
         },
         {
           "scene_id": 72,
           "narration": "Multan was the key to securing the southern border of the Sikh Empire. Between 1802 and 1817, Ranjit Singh launched six separate expeditions against Multan, but each time Nawab Muzaffar Khan repelled him.",
           "visual_prompt": "dramatic battlefield skirmish in the sandhills outside Multan, Sikh horsemen clashing with Afghan matchlockmen, artillery salvos exploding in the sand dunes, bitter military stalemate",
           "duration_sec": 10.0,
-          "motion": "pan_left"
+          "motion": "pan_left",
+          "chapter_id": 7,
+          "chapter_title": "Act VI: The Clash of Titans: Mughals, Afghans & Ranjit Singh",
+          "actual_duration_sec": 15.38
         },
         {
           "scene_id": 73,
           "narration": "In the spring of 1818, Ranjit Singh mobilized an overwhelming force of twenty-five thousand soldiers under the joint command of Prince Kharak Singh and General Misr Diwan Chand.",
           "visual_prompt": "the immense royal Sikh army encamped outside Multan, thousands of saffron and yellow tents stretching to the horizon, rows of brass cannons, disciplined ranks of drilled infantry",
           "duration_sec": 9.5,
-          "motion": "zoom_out"
+          "motion": "zoom_out",
+          "chapter_id": 7,
+          "chapter_title": "Act VI: The Clash of Titans: Mughals, Afghans & Ranjit Singh",
+          "actual_duration_sec": 11.35
         },
         {
           "scene_id": 74,
           "narration": "To breach the legendary walls, the Maharaja dispatched the pride of his artillery: the monstrous bronze cannon 'Zamzama'—weighing eight thousand pounds.",
           "visual_prompt": "the colossal green-patina bronze cannon Zamzama being hauled into siege position by twenty pairs of oxen and hundreds of straining soldiers, its engraved barrel pointing at Multan's gates",
           "duration_sec": 10.0,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 7,
+          "chapter_title": "Act VI: The Clash of Titans: Mughals, Afghans & Ranjit Singh",
+          "actual_duration_sec": 10.15
         },
         {
           "scene_id": 75,
           "narration": "For months, Zamzama hurled massive iron cannonballs into the citadel walls. On June 2nd, 1818, a massive section of the Khizri Gate rampart collapsed in a roar of rubble.",
           "visual_prompt": "the moment of the breach, a direct hit from Zamzama shattering the brick bastions of the Khizri Gate, clouds of brick dust and falling masonry, soldiers preparing to storm the gap",
           "duration_sec": 9.5,
-          "motion": "pan_right"
+          "motion": "pan_right",
+          "chapter_id": 7,
+          "chapter_title": "Act VI: The Clash of Titans: Mughals, Afghans & Ranjit Singh",
+          "actual_duration_sec": 13.32
         },
         {
           "scene_id": 76,
           "narration": "Refusing to flee, eighty-year-old Nawab Muzaffar Khan dressed in white funeral robes and took his stand at the breach with his five sons, fighting sword in hand until every one of them was killed.",
           "visual_prompt": "heroic tragic stand, the elderly Nawab Muzaffar Khan in white robes wielding a curved shamshir against overwhelming soldiers in the breach, his sons fighting loyally by his side, dramatic sunset",
           "duration_sec": 10.5,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 7,
+          "chapter_title": "Act VI: The Clash of Titans: Mughals, Afghans & Ranjit Singh",
+          "actual_duration_sec": 11.42
         },
         {
           "scene_id": 77,
           "narration": "Multan had fallen. Ranjit Singh incorporated the province into the Sikh Empire, appointing Hindu governors to manage its vast revenues.",
           "visual_prompt": "Sikh soldiers raising the royal yellow flag of Lahore atop the highest bastion of Multan, smoke clearing over the vast city, victorious commanders surveying the historic citadel",
           "duration_sec": 9.5,
-          "motion": "zoom_out"
+          "motion": "zoom_out",
+          "chapter_id": 7,
+          "chapter_title": "Act VI: The Clash of Titans: Mughals, Afghans & Ranjit Singh",
+          "actual_duration_sec": 9.77
         },
         {
           "scene_id": 78,
           "narration": "In May 1758, in one of the most astonishing expansions in Indian history, the Maratha Empire marched three thousand miles from Pune, driving out the Afghan garrison and raising the saffron flag of the Maratha Confederacy over the citadel of Multan.",
           "visual_prompt": "Maratha cavalry in saffron turbans and steel breastplates riding victoriously along the battlements of Multan citadel, unfurling the swallow-tailed Bhagwa Dhwaj flag over the ramparts, historic conquest",
           "duration_sec": 11.0,
-          "motion": "pan_left"
+          "motion": "pan_left",
+          "chapter_id": 7,
+          "chapter_title": "Act VI: The Clash of Titans: Mughals, Afghans & Ranjit Singh",
+          "actual_duration_sec": 15.91
         },
         {
           "scene_id": 79,
           "narration": "Under Maratha general Tukoji Rao Holkar, Multan became the northernmost outpost of Hindu Maratha rule, stretching the empire from the Arabian Sea to the gates of Central Asia.",
           "visual_prompt": "Maratha general Tukoji Holkar receiving the keys of the Multan fortress from local dignitaries in a grand brick pavilion, historic alliance, panoramic historical painting",
           "duration_sec": 10.0,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 7,
+          "chapter_title": "Act VI: The Clash of Titans: Mughals, Afghans & Ranjit Singh",
+          "actual_duration_sec": 11.02
         }
       ]
     },
@@ -613,112 +850,160 @@
           "narration": "Following the death of Ranjit Singh, the Sikh Empire spiraled into political intrigue. In Multan, the governorship passed to Dewan Mulraj, a shrewd and independent-minded administrator.",
           "visual_prompt": "Dewan Mulraj seated in the audience chamber of Multan, counting tax gold and consulting with his Punjabi generals, tension etched into his features as news from Lahore arrives",
           "duration_sec": 9.5,
-          "motion": "pan_left"
+          "motion": "pan_left",
+          "chapter_id": 8,
+          "chapter_title": "Act VII: The Gunpowder Cataclysm & The British Empire (1848–1849)",
+          "actual_duration_sec": 12.29
         },
         {
           "scene_id": 81,
           "narration": "By 1848, the British East India Company had established a dominant protectorate over Punjab and demanded that Mulraj surrender his governorship and pay exorbitant arrears in tax.",
           "visual_prompt": "British political agents in red coats and top hats riding into the courtyard of the Multan citadel, flanked by Gurkha and sepoy escorts, haughty colonial demeanor",
           "duration_sec": 9.5,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 8,
+          "chapter_title": "Act VII: The Gunpowder Cataclysm & The British Empire (1848–1849)",
+          "actual_duration_sec": 11.42
         },
         {
           "scene_id": 82,
           "narration": "Two British officers, Patrick Vans Agnew and Lieutenant William Anderson, were dispatched to Multan to take over the administration. On April 19th, 1848, outside the citadel gates, they were attacked and mortally wounded.",
           "visual_prompt": "violent skirmish outside the inner fortress gate of Multan, rebellious city soldiers and cavalry attacking the British officers with spears and swords, turmoil and panic",
           "duration_sec": 10.0,
-          "motion": "pan_right"
+          "motion": "pan_right",
+          "chapter_id": 8,
+          "chapter_title": "Act VII: The Gunpowder Cataclysm & The British Empire (1848–1849)",
+          "actual_duration_sec": 15.67
         },
         {
           "scene_id": 83,
           "narration": "Dewan Mulraj had reached a point of no return. He tied the royal battle bracelet around his wrist, hoisted the flag of open rebellion, and invited all of Punjab to rise up and expel the British.",
           "visual_prompt": "Dewan Mulraj addressing a massive assembly of Sikh, Muslim, and Hindu soldiers in the fortress courtyard, raising his sword to thunderous cheers, declaring total war against the East India Company",
           "duration_sec": 10.0,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 8,
+          "chapter_title": "Act VII: The Gunpowder Cataclysm & The British Empire (1848–1849)",
+          "actual_duration_sec": 13.15
         },
         {
           "scene_id": 84,
           "narration": "This single defiance sparked the Second Anglo-Sikh War. The British Empire knew that if Multan could not be crushed quickly, the entire subcontinent might erupt into revolution.",
           "visual_prompt": "British headquarters in Calcutta and Lahore in emergency session, maps of Punjab spread out under oil lamps, telegraph keys tapping furiously, dispatching massive royal regiments",
           "duration_sec": 9.5,
-          "motion": "zoom_out"
+          "motion": "zoom_out",
+          "chapter_id": 8,
+          "chapter_title": "Act VII: The Gunpowder Cataclysm & The British Empire (1848–1849)",
+          "actual_duration_sec": 11.64
         },
         {
           "scene_id": 85,
           "narration": "A massive British and allied army of over thirty thousand troops, backed by sixty heavy siege guns and howitzers under General William Whish, encircled Multan in September 1848.",
           "visual_prompt": "sprawling British siege encampment surrounding the citadel of Multan, endless trench lines (parallels) dug into the dirt, rows of massive iron siege mortars aimed upward",
           "duration_sec": 10.0,
-          "motion": "pan_left"
+          "motion": "pan_left",
+          "chapter_id": 8,
+          "chapter_title": "Act VII: The Gunpowder Cataclysm & The British Empire (1848–1849)",
+          "actual_duration_sec": 11.98
         },
         {
           "scene_id": 86,
           "narration": "For months, the British pounded the ancient city with thousands of high-explosive artillery shells, reducing the outer civilian neighborhoods to rubble while the citadel defenders held on fiercely.",
           "visual_prompt": "night bombardment of Multan, arcs of mortar fire trailing sparks across the night sky, violent explosions illuminating the ramparts, defenders firing back with wall-mounted swivel guns",
           "duration_sec": 10.0,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 8,
+          "chapter_title": "Act VII: The Gunpowder Cataclysm & The British Empire (1848–1849)",
+          "actual_duration_sec": 11.4
         },
         {
           "scene_id": 87,
           "narration": "Then came the fateful morning of December 30th, 1848. A British mortar shell fired from battery number four soared in a high arc toward the center of the citadel.",
           "visual_prompt": "dramatic cinematic slow-motion sequence, a heavy round mortar shell arcing high against the pale blue sky, whistling down toward the great central dome of the citadel magazine",
           "duration_sec": 10.0,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 8,
+          "chapter_title": "Act VII: The Gunpowder Cataclysm & The British Empire (1848–1849)",
+          "actual_duration_sec": 11.35
         },
         {
           "scene_id": 88,
           "narration": "The shell crashed through the dome of the grand mosque—which Mulraj was using as his main munitions depot, storing over five hundred thousand pounds of black gunpowder.",
           "visual_prompt": "interior cross-section, the flaming fuse of the shell piercing into a cavernous stone chamber filled with thousands of wooden barrels of gunpowder, a blinding flash of white sparks",
           "duration_sec": 10.0,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 8,
+          "chapter_title": "Act VII: The Gunpowder Cataclysm & The British Empire (1848–1849)",
+          "actual_duration_sec": 10.15
         },
         {
           "scene_id": 89,
           "narration": "What followed was one of the largest non-nuclear explosions in human history. Half a million pounds of gunpowder detonated simultaneously.",
           "visual_prompt": "apocalyptic moment of detonation, a colossal blinding white fireball erupting from the center of Multan, ripping apart stone towers, the earth buckling under astronomical force",
           "duration_sec": 10.5,
-          "motion": "zoom_out"
+          "motion": "zoom_out",
+          "chapter_id": 8,
+          "chapter_title": "Act VII: The Gunpowder Cataclysm & The British Empire (1848–1849)",
+          "actual_duration_sec": 9.7
         },
         {
           "scene_id": 90,
           "narration": "The shockwave leveled half the citadel in a fraction of a second. An immense mushroom cloud of smoke and pulverized brick soared a mile into the sky, seen and heard thirty miles away.",
           "visual_prompt": "colossal mushroom cloud of dark smoke and fire towering over the plains of Punjab, debris and masonry raining down from the heavens, absolute silence of awe from the besieging troops",
           "duration_sec": 10.5,
-          "motion": "zoom_out"
+          "motion": "zoom_out",
+          "chapter_id": 8,
+          "chapter_title": "Act VII: The Gunpowder Cataclysm & The British Empire (1848–1849)",
+          "actual_duration_sec": 12.29
         },
         {
           "scene_id": 91,
           "narration": "Over five hundred defenders were instantly killed, and the city was blanketed in a rain of ash and shattered timber. Yet remarkably, the surviving garrison fought on for another three weeks.",
           "visual_prompt": "surviving Punjabi and Sikh defenders emerging from the smoking ruins and craters, coughing in the thick dust, stubbornly picking up muskets to face the British assault columns",
           "duration_sec": 10.0,
-          "motion": "pan_left"
+          "motion": "pan_left",
+          "chapter_id": 8,
+          "chapter_title": "Act VII: The Gunpowder Cataclysm & The British Empire (1848–1849)",
+          "actual_duration_sec": 12.26
         },
         {
           "scene_id": 92,
           "narration": "Finally, on January 22nd, 1849, with all food and ammunition exhausted, Dewan Mulraj surrendered to General Whish, bringing an end to the siege.",
           "visual_prompt": "Dewan Mulraj in dignified silk robes walking out of the shattered gateway between British lines, handing his curved sword to General Whish, somber dignity of defeat",
           "duration_sec": 9.5,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 8,
+          "chapter_title": "Act VII: The Gunpowder Cataclysm & The British Empire (1848–1849)",
+          "actual_duration_sec": 11.4
         },
         {
           "scene_id": 93,
           "narration": "With the fall of Multan, the entire Punjab was formally annexed into the British Empire. The last great independent kingdom in India had ceased to exist.",
           "visual_prompt": "British Union Jack being raised above the ruined bastions of Multan citadel, British regiments marching past the rubble, historic map of India turning red under British dominion",
           "duration_sec": 9.5,
-          "motion": "pan_right"
+          "motion": "pan_right",
+          "chapter_id": 8,
+          "chapter_title": "Act VII: The Gunpowder Cataclysm & The British Empire (1848–1849)",
+          "actual_duration_sec": 10.68
         },
         {
           "scene_id": 94,
           "narration": "Beneath the battlefield, a silent war of shadows took place. British sappers and Punjabi miners dug underground tunnels toward the ramparts, engaging in deadly hand-to-hand combat inside pitch-black tunnels.",
           "visual_prompt": "underground siege warfare, sappers digging through earth by lantern light with picks and shovels, subterranean clash between soldiers inside a collapsed wooden tunnel",
           "duration_sec": 10.0,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 8,
+          "chapter_title": "Act VII: The Gunpowder Cataclysm & The British Empire (1848–1849)",
+          "actual_duration_sec": 14.11
         },
         {
           "scene_id": 95,
           "narration": "British Lieutenant Edwardes wrote in his diary: 'Never have I witnessed men fight with such dogged, sullen heroism as the garrison of Multan amidst the smoking ruins of their sanctuary.'",
           "visual_prompt": "British officer Lieutenant Edwardes writing in his leather journal inside a siege trench tent by candlelight, through the canvas flap showing the smoking silhouette of Multan under bombardment",
           "duration_sec": 10.5,
-          "motion": "zoom_out"
+          "motion": "zoom_out",
+          "chapter_id": 8,
+          "chapter_title": "Act VII: The Gunpowder Cataclysm & The British Empire (1848–1849)",
+          "actual_duration_sec": 11.28
         }
       ]
     },
@@ -731,44 +1016,64 @@
           "narration": "In the decades following the siege, the British rebuilt parts of the city. In 1884, they erected the iconic Victorian clock tower—Ghanta Ghar—directly on the ancient citadel mound.",
           "visual_prompt": "Victorian Indo-Saracenic Ghanta Ghar clock tower of Multan standing in late afternoon sun, historic archways and clock face, horse carts and early 20th century street life below",
           "duration_sec": 9.5,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 9,
+          "chapter_title": "Epilogue: The Eternal City Where History Breathes",
+          "actual_duration_sec": 13.54
         },
         {
           "scene_id": 97,
           "narration": "Yet British rule, like that of the Greeks, Arabs, Mongols, Afghans, and Sikhs before them, was merely a passing ripple across Multan's five-thousand-year expanse.",
           "visual_prompt": "time-lapse artistic transition of the Multan citadel mound, shifting from Victorian British era to 1947 independence, modern cars and vibrant neon lights replacing old carriages",
           "duration_sec": 10.0,
-          "motion": "pan_left"
+          "motion": "pan_left",
+          "chapter_id": 9,
+          "chapter_title": "Epilogue: The Eternal City Where History Breathes",
+          "actual_duration_sec": 11.42
         },
         {
           "scene_id": 98,
           "narration": "In 1947, Multan became a vital cultural and agricultural metropolis in the newly born nation of Pakistan, standing as a living testament to civilizational resilience.",
           "visual_prompt": "modern panoramic vista of Multan, bustling avenues, lush mango orchards stretching to the horizon, ancient shrines proudly dominating the urban skyline",
           "duration_sec": 9.5,
-          "motion": "pan_right"
+          "motion": "pan_right",
+          "chapter_id": 9,
+          "chapter_title": "Epilogue: The Eternal City Where History Breathes",
+          "actual_duration_sec": 11.52
         },
         {
           "scene_id": 99,
           "narration": "Today, when you walk through the ancient walled city—through the Haram Gate or Delhi Gate—the past does not feel dead or distant. It surrounds you in every terracotta brick.",
           "visual_prompt": "cinematic camera tracking through the historic Delhi Gate of Multan at golden hour, warm light spilling across bustling bazaar stalls, children running, artisans hammering copper pots",
           "duration_sec": 10.0,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 9,
+          "chapter_title": "Epilogue: The Eternal City Where History Breathes",
+          "actual_duration_sec": 11.71
         },
         {
           "scene_id": 100,
           "narration": "In the sweet aroma of famous Multani Halwa, in the cooling shade of the saintly dargahs, and in the timeless blue glaze of Kashigari pottery, the soul of five millennia thrives.",
           "visual_prompt": "sensory cultural montage: traditional copper vats of golden Multani Sohan Halwa, master craftsman polishing a blue floral ceramic vase, evening lamps burning at the shrine",
           "duration_sec": 10.0,
-          "motion": "zoom_in"
+          "motion": "zoom_in",
+          "chapter_id": 9,
+          "chapter_title": "Epilogue: The Eternal City Where History Breathes",
+          "actual_duration_sec": 11.42
         },
         {
           "scene_id": 101,
           "narration": "Empires rose with fury, conquered with blood, and vanished into dust. But Multan remains—unconquered by time, blessed by the saints, and eternal.",
           "visual_prompt": "magnificent final aerial sunset drone shot pulling backward from the luminous dome of Shah Rukn-e-Alam, revealing the vast glowing cityscape of Multan under a majestic starlit twilight sky, cinematic masterpiece",
           "duration_sec": 11.0,
-          "motion": "zoom_out"
+          "motion": "zoom_out",
+          "chapter_id": 9,
+          "chapter_title": "Epilogue: The Eternal City Where History Breathes",
+          "actual_duration_sec": 11.47
         }
       ]
     }
-  ]
+  ],
+  "actual_narration_sec": 1183.3399999999997,
+  "actual_narration_min": 19.72
 }
