@@ -16,35 +16,48 @@ sys.path.append(ROOT_DIR)
 
 import config
 
+from PIL import Image, ImageDraw, ImageFont
+import textwrap
+
 def get_or_create_placeholder_image(prompt: str, out_path: str, title: str, subtitle: str, w: int = 1920, h: int = 1080):
     """
-    If AI image generation is offline or queued, creates a stunning, atmospheric
-    1080p documentary visual frame with vignette, gradient, and historic typography
-    so rendering is 100% resilient and never fails.
+    Creates a resilient, elegant 1080p archival documentary frame using Pillow.
+    Guaranteed to work cross-platform without FFmpeg filter escaping or fontconfig errors.
     """
     if os.path.exists(out_path) and os.path.getsize(out_path) > 1000:
         return out_path
 
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
-    clean_sub = subtitle.replace("'", "").replace('"', '')[:80]
-    clean_title = title.replace("'", "").replace('"', '')[:60]
+    img = Image.new('RGB', (w, h), color=(8, 18, 30))
+    draw = ImageDraw.Draw(img)
 
-    vf = (
-        f"color=c=#06101c:s={w}x{h}:d=1,"
-        f"drawbox=y=0:color=#0a1828:width={w}:height={h}:t=fill,"
-        f"drawbox=x=80:y=80:w={w-160}:h={h-160}:color=#d4af37@0.3:t=2,"
-        f"drawtext=text='MULTAN: 5000 YEARS OF LIVING HISTORY':fontsize=26:fontcolor=#d4af37:x=(w-text_w)/2:y=140,"
-        f"drawtext=text='{clean_title}':fontsize=48:fontcolor=#f5ebd6:x=(w-text_w)/2:y=(h-text_h)/2-30,"
-        f"drawtext=text='{clean_sub}':fontsize=24:fontcolor=#f5ebd6@0.7:x=(w-text_w)/2:y=(h-text_h)/2+60"
-    )
+    # Gold decorative border
+    border_margin = 60 if w >= 1920 else 30
+    draw.rectangle([border_margin, border_margin, w - border_margin, h - border_margin], outline=(212, 175, 55), width=3)
+    draw.rectangle([border_margin + 10, border_margin + 10, w - border_margin - 10, h - border_margin - 10], outline=(100, 85, 30), width=1)
 
-    cmd = [
-        ffmpeg, "-y", "-f", "lavfi",
-        "-i", vf,
-        "-frames:v", "1",
-        out_path
-    ]
-    subprocess.run(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.PIPE)
+    # Fonts
+    font_path = os.path.join(ROOT_DIR, "assets", "fonts", "font.ttf")
+    font_bold_path = os.path.join(ROOT_DIR, "assets", "fonts", "font_bold.ttf")
+    try:
+        font_header = ImageFont.truetype(font_path, int(26 * (w / 1920)))
+        font_title = ImageFont.truetype(font_bold_path, int(42 * (w / 1920)))
+        font_body = ImageFont.truetype(font_path, int(26 * (w / 1920)))
+    except Exception:
+        font_header = font_title = font_body = ImageFont.load_default()
+
+    header_y = int(130 * (h / 1080))
+    title_y = int(h // 2 - (50 * (h / 1080)))
+    body_y = int(h // 2 + (70 * (h / 1080)))
+
+    draw.text((w // 2, header_y), "MULTAN: 5,000 YEARS OF LIVING HISTORY", fill=(212, 175, 55), font=font_header, anchor="mm")
+    draw.text((w // 2, title_y), title[:65], fill=(245, 235, 214), font=font_title, anchor="mm")
+
+    wrap_width = 65 if w >= 1920 else 35
+    wrapped = textwrap.fill(subtitle, width=wrap_width)
+    draw.text((w // 2, body_y), wrapped, fill=(200, 215, 225), font=font_body, anchor="mm", align="center")
+
+    img.save(out_path, format="PNG")
     return out_path
 
 def render_scene_clip(image_path: str, audio_path: str, duration: float, motion: str, out_path: str, w: int = 1920, h: int = 1080, fps: int = 30):
@@ -87,7 +100,11 @@ def render_scene_clip(image_path: str, audio_path: str, duration: float, motion:
         "-shortest",
         out_path
     ]
-    subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.PIPE)
+    res = subprocess.run(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.PIPE)
+    if res.returncode != 0:
+        err = res.stderr.decode('utf-8', errors='ignore')
+        print(f"[FFmpeg ERROR] Scene render failed: {err[-400:]}")
+        raise RuntimeError(f"FFmpeg failed with code {res.returncode}")
 
 def render_chapter(chapter_data: dict, out_chapter_mp4: str, w: int = 1920, h: int = 1080):
     cid = chapter_data["chapter_id"]

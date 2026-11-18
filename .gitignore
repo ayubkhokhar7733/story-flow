@@ -21,6 +21,8 @@ output/*.mp4
 !output/.gitkeep
 test_*.mp3
 *.log
+documentaries/**/chunks/
+documentaries/**/chapters_rendered/
 
 # OS metadata
 .DS_Store
