@@ -49,10 +49,14 @@ def generate_scene_images(scenes: list, aspect: str = "9:16", progress_callback=
         success = False
         for attempt in range(3):
             try:
+                # Clamp Horde request to <= 512x512 to prevent KudosUpfront rejection on free tier
+                horde_w = min(target_w, 512)
+                horde_h = min(target_h, 512)
+
                 img_url, used_model, used_seed = _request_horde_image(
                     prompt=prompt,
-                    width=target_w,
-                    height=target_h,
+                    width=horde_w,
+                    height=horde_h,
                     ref_image_path=ref_image_path if attempt == 0 else None, # fallback to txt2img on retry
                     target_model=locked_model,
                     denoising_strength=denoising,
@@ -81,8 +85,8 @@ def generate_scene_images(scenes: list, aspect: str = "9:16", progress_callback=
                 time.sleep(2)
 
         if not success:
-            print(f"[image_engine] Warning: Generating placeholder fallback for Scene {scene_id}", flush=True)
-            _create_fallback_image(scene_id, prompt, output_path, target_w, target_h)
+            print(f"[image_engine] Warning: Generating character fallback for Scene {scene_id}", flush=True)
+            _create_fallback_image(scene_id, prompt, output_path, target_w, target_h, character_id=scene.get("character_id"))
             scene["image_path"] = output_path
             prev_scene_path = output_path
 
@@ -136,7 +140,7 @@ def _request_horde_image(prompt: str, width: int = 512, height: int = 768, ref_i
 
     # Poll status
     start_time = time.time()
-    while time.time() - start_time < 180:
+    while time.time() - start_time < 35:
         time.sleep(3)
         chk = requests.get(f"{config.AI_HORDE_BASE_URL}/generate/check/{job_id}", headers=headers, timeout=15).json()
 
@@ -181,8 +185,30 @@ def _download_and_save_image(img_data: str, target_path: str):
     img.save(target_path, "PNG")
 
 
-def _create_fallback_image(scene_id: int, prompt: str, target_path: str, width: int = 512, height: int = 768):
-    """Creates a stylized gradient backdrop with text if worker fails."""
+def _create_fallback_image(scene_id: int, prompt: str, target_path: str, width: int = 512, height: int = 768, character_id: str = None):
+    """Uses character visual keyframe or stylized gradient backdrop if worker fails."""
+    # Check for character visual asset in assets/characters/
+    char_asset = None
+    characters_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "assets", "characters")
+    if character_id:
+        p = os.path.join(characters_dir, f"{character_id}.png")
+        if os.path.exists(p):
+            char_asset = p
+    if not char_asset:
+        default_p = os.path.join(characters_dir, "chacha_bashir.png")
+        if os.path.exists(default_p):
+            char_asset = default_p
+
+    if char_asset and os.path.exists(char_asset):
+        try:
+            from PIL import ImageOps
+            with Image.open(char_asset) as base:
+                fitted = ImageOps.fit(base, (width, height), method=Image.Resampling.LANCZOS)
+                fitted.save(target_path, "PNG")
+                return
+        except Exception as e:
+            print(f"[image_engine] Character fallback composite error: {e}")
+
     from PIL import ImageDraw
     img = Image.new("RGB", (width, height), color=(30, 40, 60))
     draw = ImageDraw.Draw(img)

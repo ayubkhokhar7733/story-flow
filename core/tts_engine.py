@@ -3,8 +3,9 @@ tts_engine.py - Voiceover generation with Edge-TTS and phrase-level SRT subtitle
 """
 import asyncio
 import os
+import re
 import time
-from moviepy import AudioFileClip
+import subprocess
 import config
 
 def generate_story_audio(scenes: list, voice_name: str = None) -> tuple:
@@ -57,13 +58,17 @@ def generate_story_audio(scenes: list, voice_name: str = None) -> tuple:
 
 
 def _measure_duration(path: str) -> float:
+    """Measures audio duration via ffmpeg without external dependencies."""
     try:
-        clip = AudioFileClip(path)
-        d = float(clip.duration)
-        clip.close()
-        return d
-    except Exception:
-        return 30.0
+        cmd = ["ffmpeg", "-i", path]
+        res = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        match = re.search(r"Duration:\s*(\d+):(\d+):(\d+\.?\d*)", res.stderr)
+        if match:
+            h, m, s = match.groups()
+            return int(h) * 3600 + int(m) * 60 + float(s)
+    except Exception as e:
+        print(f"[tts_engine] ffmpeg duration check warning: {e}")
+    return 30.0
 
 
 def _run_edge_tts(text: str, voice: str, audio_path: str, srt_path: str):
