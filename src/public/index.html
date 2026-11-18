@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Horde Studio - Free Distributed Image & Text Generation</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Navigation Header -->
+    <header class="navbar">
+      <div class="nav-brand">
+        <div class="brand-logo">⚡</div>
+        <div class="brand-titles">
+          <h1>AI Horde Studio</h1>
+          <span class="brand-subtitle">Crowdsourced GPU Computing &bull; 100% Free</span>
+        </div>
+      </div>
+
+      <div class="nav-stats">
+        <div class="stat-pill" id="horde-status-pill">
+          <span class="status-dot green"></span>
+          <span id="horde-status-text">Connecting...</span>
+        </div>
+
+        <div class="stat-pill clickable" id="user-kudos-pill" title="Click to change API Key / View Account">
+          <span class="icon">👤</span>
+          <span id="user-name">Anonymous</span>
+          <span class="kudos-badge" id="user-kudos">0 Kudos</span>
+        </div>
+
+        <button class="btn btn-secondary btn-icon" id="settings-btn" title="API Settings">
+          ⚙️
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="tabs-bar">
+      <button class="tab-btn active" data-tab="tab-story">
+        <span class="tab-icon">🎬</span> Story Video Maker
+      </button>
+      <button class="tab-btn" data-tab="tab-image">
+        <span class="tab-icon">🎨</span> Image Generation
+      </button>
+      <button class="tab-btn" data-tab="tab-text">
+        <span class="tab-icon">✍️</span> Text Generation (LLM)
+      </button>
+      <button class="tab-btn" data-tab="tab-models">
+        <span class="tab-icon">🌐</span> Active Cluster Models
+      </button>
+    </nav>
+
+    <!-- Main Workspace -->
+    <main class="main-content">
+
+      <!-- ========================================== -->
+      <!-- TAB 0: STORY VIDEO MAKER (YOUTUBE CHANNEL) -->
+      <!-- ========================================== -->
+      <section id="tab-story" class="tab-panel active">
+        <div class="generator-grid">
+          <!-- Story Controls -->
+          <div class="panel-card controls-card">
+            <div class="panel-header">
+              <div>
+                <h2>Story Video Generator</h2>
+                <p class="subtitle">Creates scene-by-scene cartoon art, neural narration & 1080p video</p>
+              </div>
+              <span class="badge free-badge">Cartoon AI Pipeline</span>
+            </div>
+
+            <form id="story-form">
+              <!-- Topic Input -->
+              <div class="form-group">
+                <div class="label-row">
+                  <label for="story-topic">Story Topic / Concept</label>
+                  <button type="button" class="btn-link" id="btn-sample-story">🎲 Story Ideas</button>
+                </div>
+                <textarea id="story-topic" rows="3" placeholder="Describe the story topic or folklore..." required>The Brave Little Fox Who Touched the Northern Lights</textarea>
+                <span class="help-text">The AI will craft a high-retention script with character anchors and scene prompts.</span>
+              </div>
+
+              <!-- Format Selector (9:16 Shorts vs 16:9 Landscape) -->
+              <div class="form-group">
+                <label>Video Format (Aspect Ratio)</label>
+                <div class="chip-selector" id="story-aspect-selector">
+                  <button type="button" class="chip active" data-aspect="9:16">📱 9:16 Vertical (Shorts / Reels)</button>
+                  <button type="button" class="chip" data-aspect="16:9">🖥️ 16:9 Landscape (YouTube Standard)</button>
+                </div>
+              </div>
+
+              <!-- Duration Selector -->
+              <div class="form-group">
+                <label>Target Video Duration</label>
+                <div class="chip-selector" id="story-duration-selector">
+                  <button type="button" class="chip" data-dur="30">⚡ 30s</button>
+                  <button type="button" class="chip active" data-dur="60">⏱️ 1 Minute (Shorts)</button>
+                  <button type="button" class="chip" data-dur="180">📖 3 mins</button>
+                  <button type="button" class="chip" data-dur="600">🎬 10 mins</button>
+                  <button type="button" class="chip" data-dur="1200">🏆 20 mins</button>
+                </div>
+              </div>
+
+              <!-- Voice Narrator Selector -->
+              <div class="form-group">
+                <label for="story-voice">Narrator Voice (Neural TTS)</label>
+                <select id="story-voice" class="form-select">
+                  <option value="christopher" selected>Christopher (Deep, Warm, Storyteller - Recommended)</option>
+                  <option value="guy">Guy (Clear, Engaging, American)</option>
+                  <option value="jenny">Jenny (Gentle, Expressive, Fairy Tale)</option>
+                  <option value="ryan">Ryan (British Folklore / Fantasy)</option>
+                  <option value="sonia">Sonia (Classic British Fairy Tale)</option>
+                </select>
+              </div>
+
+              <!-- Pipeline Features Checkmarks -->
+              <div class="pipeline-features-box">
+                <div class="feature-item"><span>🎨</span> Consistent Cartoon Characters</div>
+                <div class="feature-item"><span>🔍</span> Ken Burns Dynamic Motion</div>
+                <div class="feature-item"><span>💬</span> Burned-in Subtitles</div>
+                <div class="feature-item"><span>🎵</span> Background Music Ducking</div>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary btn-block" id="btn-generate-story">
+                  <span class="btn-icon">🎬</span> Generate Story Video (1080p)
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Video Output & Live Pipeline Tracker -->
+          <div class="panel-card preview-card">
+            <div class="panel-header">
+              <h2>Video Player & Progress</h2>
+              <div id="story-status-badge" class="badge badge-idle">Ready</div>
+            </div>
+
+            <!-- Live Terminal Log Box -->
+            <div id="story-log-box" class="story-terminal hidden">
+              <div class="terminal-header">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+                <span class="terminal-title">Story Pipeline Live Execution</span>
+              </div>
+              <div class="terminal-body" id="story-terminal-content"></div>
+            </div>
+
+            <!-- Video Player Output -->
+            <div class="output-viewport" id="story-viewport">
+              <div class="empty-state" id="story-empty-state">
+                <div class="empty-icon">🍿</div>
+                <h3>Ready to Create Your Video</h3>
+                <p>Pick a topic or hit "Generate Story Video" to start producing cartoon video stories.</p>
+              </div>
+
+              <div class="video-result hidden" id="story-result-box">
+                <div class="video-wrapper">
+                  <video id="story-video-player" controls preload="metadata">
+                    <source id="story-video-source" src="" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                  </video>
+                </div>
+
+                <div class="result-details">
+                  <div class="result-meta-row">
+                    <div><span class="meta-label">Resolution:</span> <span class="meta-val">1920x1080 (16:9)</span></div>
+                    <div><span class="meta-label">File:</span> <span id="story-res-filename" class="meta-val">--</span></div>
+                  </div>
+
+                  <div class="result-buttons">
+                    <a id="btn-download-story-video" href="#" download="story_video.mp4" class="btn btn-primary">
+                      📥 Download 1080p Video
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Recent Generated Videos List -->
+            <div class="recent-videos-section">
+              <div class="recent-header">
+                <h3>📁 Channel Video Library</h3>
+                <button type="button" class="btn-link" id="btn-refresh-story-videos">🔄 Refresh</button>
+              </div>
+              <div id="recent-videos-list" class="recent-videos-list">
+                <div class="empty-list-note">Loading videos...</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- TAB 1: IMAGE GENERATION -->
+      <!-- ========================================== -->
+      <section id="tab-image" class="tab-panel">
+        <div class="generator-grid">
+          <!-- Left Controls Column -->
+          <div class="panel-card controls-card">
+            <div class="panel-header">
+              <h2>Image Configuration</h2>
+              <span class="badge free-badge">Free Tier Optimized (512x512)</span>
+            </div>
+
+            <form id="image-form">
+              <!-- Prompt Input -->
+              <div class="form-group">
+                <div class="label-row">
+                  <label for="img-prompt">Prompt</label>
+                  <button type="button" class="btn-link" id="btn-sample-image-prompt">🎲 Surprise Me</button>
+                </div>
+                <textarea id="img-prompt" rows="3" placeholder="Describe the image you want to generate in detail..." required>A serene misty Japanese mountain sanctuary at dawn with cherry blossoms, cinematic lighting, 8k digital art</textarea>
+              </div>
+
+              <!-- Negative Prompt (Collapsible) -->
+              <details class="accordion">
+                <summary>Negative Prompt (Optional)</summary>
+                <div class="form-group pt-2">
+                  <input type="text" id="img-neg-prompt" placeholder="blurry, distorted, low quality, deformed, watermark" value="blurry, low quality, deformed, bad anatomy, duplicate">
+                </div>
+              </details>
+
+              <!-- Dynamic Model Selector -->
+              <div class="form-group">
+                <div class="label-row">
+                  <label for="img-model">Target Model</label>
+                  <span class="model-meta" id="img-model-workers">Loading active workers...</span>
+                </div>
+                <select id="img-model" class="form-select">
+                  <option value="stable_diffusion" selected>stable_diffusion (Loading...)</option>
+                </select>
+                <span class="help-text">Requests are routed to volunteer GPUs hosting this specific checkpoint.</span>
+              </div>
+
+              <!-- Parameters Grid -->
+              <div class="params-grid">
+                <!-- Dimensions -->
+                <div class="form-group">
+                  <label>Resolution</label>
+                  <div class="chip-selector" id="resolution-selector">
+                    <button type="button" class="chip active" data-w="512" data-h="512">512 × 512</button>
+                    <button type="button" class="chip" data-w="512" data-h="768">512 × 768</button>
+                    <button type="button" class="chip" data-w="768" data-h="512">768 × 512</button>
+                  </div>
+                </div>
+
+                <!-- Steps -->
+                <div class="form-group">
+                  <div class="label-row">
+                    <label for="img-steps">Steps</label>
+                    <span class="slider-value" id="img-steps-val">20</span>
+                  </div>
+                  <input type="range" id="img-steps" min="15" max="35" value="20" step="1">
+                  <span class="help-text">20-25 steps minimizes queue wait time on free tier.</span>
+                </div>
+
+                <!-- CFG Scale -->
+                <div class="form-group">
+                  <div class="label-row">
+                    <label for="img-cfg">CFG Scale</label>
+                    <span class="slider-value" id="img-cfg-val">7.5</span>
+                  </div>
+                  <input type="range" id="img-cfg" min="1" max="15" value="7.5" step="0.5">
+                </div>
+
+                <!-- Sampler -->
+                <div class="form-group">
+                  <label for="img-sampler">Sampler</label>
+                  <select id="img-sampler" class="form-select">
+                    <option value="k_euler_a" selected>k_euler_a (Recommended)</option>
+                    <option value="k_euler">k_euler</option>
+                    <option value="k_dpmpp_2m">k_dpmpp_2m</option>
+                    <option value="k_dpmpp_sde">k_dpmpp_sde</option>
+                    <option value="k_lms">k_lms</option>
+                    <option value="DDIM">DDIM</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Actions -->
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary btn-block" id="btn-generate-image">
+                  <span class="btn-icon">⚡</span> Generate Image (Free)
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Right Preview & Live Progress Column -->
+          <div class="panel-card preview-card">
+            <div class="panel-header">
+              <h2>Result & Live Status</h2>
+              <div id="img-status-badge" class="badge badge-idle">Ready</div>
+            </div>
+
+            <!-- Live Progress Bar & Queue Tracker -->
+            <div id="img-progress-container" class="progress-box hidden">
+              <div class="progress-header">
+                <span class="progress-step-text" id="img-progress-step">Submitting to AI Horde...</span>
+                <span class="progress-percent" id="img-progress-timer">0s elapsed</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill" id="img-progress-bar"></div>
+              </div>
+
+              <div class="metrics-grid">
+                <div class="metric-item">
+                  <span class="metric-label">Queue Position</span>
+                  <span class="metric-val" id="img-queue-pos">--</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-label">Est. Wait Time</span>
+                  <span class="metric-val" id="img-wait-time">--</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-label">Worker Status</span>
+                  <span class="metric-val" id="img-worker-status">Waiting</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Image Asset Output Area -->
+            <div class="output-viewport" id="image-viewport">
+              <div class="empty-state" id="image-empty-state">
+                <div class="empty-icon">🖼️</div>
+                <h3>No Image Generated Yet</h3>
+                <p>Pick a prompt and hit "Generate Image" to queue a job on the free volunteer GPU cluster.</p>
+              </div>
+
+              <div class="image-result hidden" id="image-result-box">
+                <div class="image-wrapper">
+                  <img id="image-output" src="" alt="AI Horde Generated Result">
+                </div>
+
+                <div class="result-details">
+                  <div class="result-meta-row">
+                    <div>
+                      <span class="meta-label">Model:</span> <span id="img-res-model" class="meta-val">--</span>
+                    </div>
+                    <div>
+                      <span class="meta-label">Worker:</span> <span id="img-res-worker" class="meta-val">--</span>
+                    </div>
+                    <div>
+                      <span class="meta-label">Seed:</span> <span id="img-res-seed" class="meta-val">--</span>
+                    </div>
+                  </div>
+
+                  <div class="result-buttons">
+                    <a id="btn-download-image" href="#" download="aihorde_image.webp" class="btn btn-primary">
+                      📥 Download Image
+                    </a>
+                    <button type="button" class="btn btn-secondary" id="btn-copy-image-url">
+                      📋 Copy Asset URL
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- TAB 2: TEXT GENERATION (LLM) -->
+      <!-- ========================================== -->
+      <section id="tab-text" class="tab-panel">
+        <div class="generator-grid">
+          <!-- Text Controls -->
+          <div class="panel-card controls-card">
+            <div class="panel-header">
+              <h2>Text Generation (LLM)</h2>
+              <span class="badge free-badge">Free KoboldAI Cluster</span>
+            </div>
+
+            <form id="text-form">
+              <div class="form-group">
+                <div class="label-row">
+                  <label for="text-prompt">Prompt / Instruction</label>
+                  <button type="button" class="btn-link" id="btn-sample-text-prompt">🎲 Sample Prompts</button>
+                </div>
+                <textarea id="text-prompt" rows="5" placeholder="Enter instructions or context for the AI..." required>Write an engaging 30-second YouTube video intro hook about the mysterious origins of deep-sea trenches:</textarea>
+              </div>
+
+              <div class="form-group">
+                <div class="label-row">
+                  <label for="text-model">Target Text Model</label>
+                  <span class="model-meta" id="text-model-workers">Loading active workers...</span>
+                </div>
+                <select id="text-model" class="form-select">
+                  <option value="" selected>Auto (Select best active model)</option>
+                </select>
+                <span class="help-text">Runs on open-source weights hosted across volunteer machines.</span>
+              </div>
+
+              <div class="params-grid">
+                <div class="form-group">
+                  <div class="label-row">
+                    <label for="text-max-tokens">Max Tokens</label>
+                    <span class="slider-value" id="text-max-tokens-val">250</span>
+                  </div>
+                  <input type="range" id="text-max-tokens" min="50" max="500" value="250" step="10">
+                </div>
+
+                <div class="form-group">
+                  <div class="label-row">
+                    <label for="text-temp">Temperature</label>
+                    <span class="slider-value" id="text-temp-val">0.7</span>
+                  </div>
+                  <input type="range" id="text-temp" min="0.1" max="1.5" value="0.7" step="0.05">
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary btn-block" id="btn-generate-text">
+                  <span class="btn-icon">✍️</span> Generate Text (Free)
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Text Output & Live Tracking -->
+          <div class="panel-card preview-card">
+            <div class="panel-header">
+              <h2>Generated Response</h2>
+              <div id="text-status-badge" class="badge badge-idle">Ready</div>
+            </div>
+
+            <!-- Live Text Progress -->
+            <div id="text-progress-container" class="progress-box hidden">
+              <div class="progress-header">
+                <span class="progress-step-text" id="text-progress-step">Queued on Horde...</span>
+                <span class="progress-percent" id="text-progress-timer">0s elapsed</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill" id="text-progress-bar"></div>
+              </div>
+
+              <div class="metrics-grid">
+                <div class="metric-item">
+                  <span class="metric-label">Queue Position</span>
+                  <span class="metric-val" id="text-queue-pos">--</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-label">Est. Wait Time</span>
+                  <span class="metric-val" id="text-wait-time">--</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-label">Worker Status</span>
+                  <span class="metric-val" id="text-worker-status">Waiting</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Text Box -->
+            <div class="text-output-viewport">
+              <div class="empty-state" id="text-empty-state">
+                <div class="empty-icon">📝</div>
+                <h3>Awaiting Output</h3>
+                <p>Submit a prompt to stream live responses from open-source LLMs.</p>
+              </div>
+
+              <div class="text-result hidden" id="text-result-box">
+                <pre class="text-content" id="text-output"></pre>
+                <div class="result-details">
+                  <div class="result-meta-row">
+                    <div><span class="meta-label">Model:</span> <span id="text-res-model" class="meta-val">--</span></div>
+                    <div><span class="meta-label">Worker:</span> <span id="text-res-worker" class="meta-val">--</span></div>
+                  </div>
+                  <div class="result-buttons">
+                    <button type="button" class="btn btn-secondary" id="btn-copy-text">📋 Copy Output</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- TAB 3: ACTIVE CLUSTER MODELS -->
+      <!-- ========================================== -->
+      <section id="tab-models" class="tab-panel">
+        <div class="panel-card">
+          <div class="panel-header">
+            <div>
+              <h2>Live Cluster Hardware & Model Status</h2>
+              <p class="subtitle">Discovered directly from <code>/status/models</code>. Pick models with high worker counts for the lowest wait times.</p>
+            </div>
+            <button class="btn btn-secondary" id="btn-refresh-models">🔄 Refresh Models</button>
+          </div>
+
+          <div class="models-tables-grid">
+            <div>
+              <h3 class="table-section-title">🎨 Top Image Models</h3>
+              <div class="table-wrapper">
+                <table class="data-table" id="table-image-models">
+                  <thead>
+                    <tr>
+                      <th>Model Name</th>
+                      <th>Workers</th>
+                      <th>Queued</th>
+                      <th>ETA</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td colspan="5" class="text-center">Loading models...</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="table-section-title">✍️ Top Text Models</h3>
+              <div class="table-wrapper">
+                <table class="data-table" id="table-text-models">
+                  <thead>
+                    <tr>
+                      <th>Model Name</th>
+                      <th>Workers</th>
+                      <th>Queued</th>
+                      <th>ETA</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td colspan="5" class="text-center">Loading models...</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Settings Modal -->
+    <div class="modal-overlay hidden" id="settings-modal">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3>AI Horde Settings & API Key</h3>
+          <button class="btn-close" id="btn-close-settings">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="setting-apikey">Horde API Key</label>
+            <input type="text" id="setting-apikey" placeholder="0000000000 (Anonymous)" value="0000000000">
+            <span class="help-text">
+              Leave as <code>0000000000</code> for free anonymous access. If you have an account on <a href="https://aihorde.net" target="_blank" rel="noreferrer">aihorde.net</a>, paste your personal key to use your Kudos for instant priority.
+            </span>
+          </div>
+
+          <div class="account-details-box" id="modal-account-info">
+            <div class="account-row">
+              <span>Account Status:</span>
+              <strong id="modal-account-name">Anonymous#0</strong>
+            </div>
+            <div class="account-row">
+              <span>Available Kudos:</span>
+              <strong id="modal-account-kudos">0</strong>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="btn-cancel-settings">Cancel</button>
+          <button type="button" class="btn btn-primary" id="btn-save-settings">Save & Validate Key</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast hidden"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

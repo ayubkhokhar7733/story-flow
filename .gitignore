@@ -1,0 +1,27 @@
+# Node dependencies
+node_modules/
+npm-debug.log*
+
+# Python caches and virtualenvs
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv
+venv/
+env/
+
+# Environment files
+.env
+.env.local
+
+# Temporary files & heavy generated outputs
+temp/
+output/*.mp4
+!output/.gitkeep
+test_*.mp3
+*.log
+
+# OS metadata
+.DS_Store
+Thumbs.db

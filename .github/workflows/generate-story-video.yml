@@ -1,0 +1,109 @@
+name: Generate AI Story Video
+
+on:
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: 'Story topic or prompt'
+        required: true
+        default: 'The Ancient Citadel of Multan: The Legendary City of Gold'
+        type: string
+      aspect:
+        description: 'Video Format (9:16 for Shorts / 16:9 for Landscape)'
+        required: true
+        default: '9:16'
+        type: choice
+        options:
+          - '9:16'
+          - '16:9'
+      voice:
+        description: 'Narrator Voice'
+        required: true
+        default: 'asad'
+        type: choice
+        options:
+          - 'asad'        # Urdu Male (Pakistan)
+          - 'uzma'        # Urdu Female (Pakistan)
+          - 'salman'      # Urdu/Hindi Male
+          - 'gul'         # Urdu/Hindi Female
+          - 'christopher' # English Deep Male
+          - 'guy'         # English Engaging Male
+          - 'jenny'       # English Soft Female
+          - 'ryan'        # English British Male
+      duration:
+        description: 'Target duration in seconds'
+        required: true
+        default: 60
+        type: number
+
+  # Optional recurring daily schedule (Uncomment to automatically generate 1 Short every day at 10:00 AM UTC):
+  # schedule:
+  #   - cron: '0 10 * * *'
+
+jobs:
+  build-story-video:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install System FFmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
+      - name: Install Python Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Generate Story Video
+        env:
+          AI_HORDE_API_KEY: ${{ secrets.AI_HORDE_API_KEY || '0000000000' }}
+          AI_HORDE_CLIENT_AGENT: 'StoryFlow-CI:1.0.0:github-actions'
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY || '' }}
+        run: |
+          TOPIC="${{ github.event.inputs.topic || 'The Ancient Citadel of Multan: The Legendary City of Gold' }}"
+          ASPECT="${{ github.event.inputs.aspect || '9:16' }}"
+          VOICE="${{ github.event.inputs.voice || 'asad' }}"
+          DURATION="${{ github.event.inputs.duration || '60' }}"
+
+          echo ">> Running AI Storyflow Generator..."
+          echo "Topic: $TOPIC"
+          echo "Aspect: $ASPECT"
+          echo "Voice: $VOICE"
+          echo "Duration: $DURATION seconds"
+
+          python generate_story_video.py \
+            --topic "$TOPIC" \
+            --aspect "$ASPECT" \
+            --voice "$VOICE" \
+            --duration "$DURATION"
+
+      - name: List Generated Videos
+        run: |
+          echo "### Generated Artifacts:"
+          ls -lh output/
+
+      - name: Upload Video as Workflow Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: story-video-${{ github.run_id }}
+          path: output/*.mp4
+          retention-days: 14
+
+      - name: Job Summary
+        run: |
+          echo "## 🎬 AI Storytelling Video Generated Successfully!" >> $GITHUB_STEP_SUMMARY
+          echo "- **Topic:** ${{ github.event.inputs.topic || 'The Ancient Citadel of Multan' }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Format:** ${{ github.event.inputs.aspect || '9:16' }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Voice:** ${{ github.event.inputs.voice || 'asad' }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Download:** Check the **Artifacts** section of this workflow run to download your MP4." >> $GITHUB_STEP_SUMMARY

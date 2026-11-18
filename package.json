@@ -1,0 +1,28 @@
+{
+  "name": "story-flow",
+  "version": "1.0.0",
+  "description": "AI Horde API Integration for free distributed image and text generation",
+  "main": "src/ai-horde-client.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "example:image": "node examples/generate-image.js",
+    "example:text": "node examples/generate-text.js",
+    "example:models": "node examples/discover-models.js"
+  },
+  "keywords": [
+    "ai-horde",
+    "stable-diffusion",
+    "image-generation",
+    "text-generation",
+    "llm",
+    "free-ai"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^18.0.8",
+    "express": "^5.3.0"
+  }
+}
