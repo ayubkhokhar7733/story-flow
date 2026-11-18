@@ -21,24 +21,51 @@ from core.script_engine import generate_story_script
 from core.image_engine import generate_scene_images
 from core.tts_engine import generate_story_audio
 from core.video_composer import compose_story_video
+from core.character_engine import character_engine
 import config
 
-def build_story_video(topic: str, duration: int = 60, voice: str = "christopher", aspect: str = "9:16") -> str:
+def build_story_video(
+    topic: str,
+    duration: int = 60,
+    voice: str = "christopher",
+    aspect: str = "9:16",
+    character: str = None,
+    upload_youtube: bool = False,
+    privacy: str = "unlisted"
+) -> str:
     start_total = time.time()
     preset = config.ASPECT_PRESETS.get(aspect, config.ASPECT_PRESETS["9:16"])
     vw, vh = preset["width"], preset["height"]
 
+    char_data = character_engine.get_character(character) if character else None
+    char_name = char_data.get("name", "Custom") if char_data else "None"
+
+    # Automatically adapt voice to character if default voice was passed
+    if character and voice == "christopher":
+        vprofile = character_engine.get_voice_profile(character, language="en")
+        char_vname = vprofile.get("voice", "").lower()
+        if "guy" in char_vname:
+            voice = "guy"
+        elif "jenny" in char_vname:
+            voice = "jenny"
+        elif "eric" in char_vname:
+            voice = "eric"
+        elif "aria" in char_vname:
+            voice = "aria"
+
     print("=" * 65, flush=True)
     print(f">> AI STORYTELLING CHANNEL VIDEO GENERATOR", flush=True)
     print(f"Topic:       {topic}", flush=True)
+    print(f"Character:   {char_name} ({character or 'None'})", flush=True)
     print(f"Duration:    ~{duration} seconds", flush=True)
     print(f"Format:      {aspect} ({vw}x{vh})", flush=True)
     print(f"Voice:       {voice}", flush=True)
+    print(f"YouTube:     {'Enabled (' + privacy + ')' if upload_youtube else 'Disabled'}", flush=True)
     print("=" * 65, flush=True)
 
     # 1. Script Generation
     print("\n[Step 1/4] Writing scene-by-scene cartoon story script...", flush=True)
-    story = generate_story_script(topic, target_seconds=duration)
+    story = generate_story_script(topic, target_seconds=duration, character_id=character)
     scenes = story.get("scenes", [])
     title = story.get("title", topic)
 
@@ -76,6 +103,23 @@ def build_story_video(topic: str, duration: int = 60, voice: str = "christopher"
     print(f"Video Specs: {vw}x{vh} ({aspect}), {actual_duration:.1f}s, {file_size_mb:.2f} MB", flush=True)
     print("=" * 65, flush=True)
 
+    # 5. Direct YouTube Upload (if requested)
+    if upload_youtube:
+        print("\n[Step 5/5] Uploading generated video to YouTube channel...", flush=True)
+        try:
+            from core.youtube_uploader import upload_video
+            desc = f"{title}\n\nGenerated with StoryFlow AI.\nFeaturing: {char_name}\n"
+            yt_res = upload_video(
+                video_path=output_video_path,
+                title=title,
+                description=desc,
+                tags=["StoryFlow", "Animation", "AIStory", char_name.replace(" ", "")],
+                privacy_status=privacy
+            )
+            print(f"🎬 Watch Live on YouTube: {yt_res['video_url']}", flush=True)
+        except Exception as yt_err:
+            print(f"⚠️ YouTube upload warning: {yt_err}", flush=True)
+
     return output_video_path
 
 
@@ -85,11 +129,22 @@ def main():
     parser.add_argument("--duration", "-d", type=int, default=60, help="Target duration in seconds (default: 60 for 1-minute test)")
     parser.add_argument("--voice", "-v", type=str, default="christopher", choices=list(config.VALID_VOICES.keys()), help="Voice narrator")
     parser.add_argument("--aspect", "-a", type=str, default="9:16", choices=["9:16", "16:9"], help="Video aspect ratio: 9:16 (Shorts/Reels) or 16:9 (Landscape)")
+    parser.add_argument("--character", "-c", type=str, default=None, choices=["chacha_bashir", "zainab_explorer", "raja_veer", "baba_fazal"], help="Registered character anchor")
+    parser.add_argument("--upload-youtube", action="store_true", help="Directly upload rendered video to YouTube channel")
+    parser.add_argument("--privacy", type=str, default="unlisted", choices=["private", "unlisted", "public"], help="YouTube privacy setting")
 
     args = parser.parse_args()
 
     try:
-        build_story_video(topic=args.topic, duration=args.duration, voice=args.voice, aspect=args.aspect)
+        build_story_video(
+            topic=args.topic,
+            duration=args.duration,
+            voice=args.voice,
+            aspect=args.aspect,
+            character=args.character,
+            upload_youtube=args.upload_youtube,
+            privacy=args.privacy
+        )
     except Exception as e:
         print(f"\n[ERROR] Pipeline failed: {e}", file=sys.stderr)
         import traceback

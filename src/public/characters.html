@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StoryFlow — 3D Stylized Characters & Story Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: rgba(18, 24, 38, 0.85);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --accent: #f59e0b;
+      --accent-green: #10b981;
+      --accent-blue: #3b82f6;
+      --accent-purple: #8b5cf6;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: radial-gradient(circle at 50% 0%, #172138 0%, var(--bg) 60%);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      min-height: 100vh;
+      padding: 2.5rem 1.5rem;
+    }
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      color: #fbbf24;
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #ffffff 40%, #fbbf24 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.75rem;
+    }
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 1.15rem;
+      max-width: 720px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    .top-nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.75rem;
+    }
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--card-border);
+      color: #e2e8f0;
+      text-decoration: none;
+      padding: 0.65rem 1.25rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+    }
+    .nav-btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+    .nav-btn.primary {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #000;
+      font-weight: 700;
+      border: none;
+    }
+    .nav-btn.primary:hover {
+      box-shadow: 0 8px 24px rgba(245, 158, 11, 0.35);
+    }
+
+    /* Character Cards Grid */
+    .character-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+    .char-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      overflow: hidden;
+      backdrop-filter: blur(16px);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    .char-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(245, 158, 11, 0.4);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+    }
+    .img-box {
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+      position: relative;
+      background: #000;
+    }
+    .img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .char-card:hover .img-box img {
+      transform: scale(1.05);
+    }
+    .avatar-badge {
+      position: absolute;
+      bottom: -24px;
+      right: 18px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 3px solid #090d16;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      overflow: hidden;
+      background: #1e293b;
+    }
+    .avatar-badge img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .card-body {
+      padding: 1.75rem 1.5rem 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .char-role {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #fbbf24;
+      margin-bottom: 0.35rem;
+    }
+    .char-name {
+      font-size: 1.45rem;
+      font-weight: 800;
+      margin-bottom: 0.6rem;
+      color: #fff;
+    }
+    .char-desc {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.55;
+      margin-bottom: 1.25rem;
+      flex: 1;
+    }
+    .catchphrase-box {
+      background: rgba(255, 255, 255, 0.04);
+      border-left: 3px solid var(--accent);
+      padding: 0.75rem 1rem;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 1.25rem;
+      font-style: italic;
+      font-size: 0.88rem;
+      color: #fef08a;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 1rem;
+      margin-top: auto;
+    }
+    .voice-badge {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .action-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff;
+      padding: 0.45rem 0.9rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .action-btn:hover {
+      background: var(--accent);
+      color: #000;
+      border-color: var(--accent);
+    }
+
+    /* Live Studio Section */
+    .studio-box {
+      background: linear-gradient(180deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.9) 100%);
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.4);
+    }
+    .studio-box h2 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .studio-box p {
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      font-size: 1rem;
+    }
+    .workflow-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .info-card {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.25rem;
+    }
+    .info-card h4 {
+      font-size: 1rem;
+      color: #fbbf24;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .info-card p {
+      font-size: 0.88rem;
+      margin-bottom: 0;
+      color: #cbd5e1;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge">🎨 3D Stylized Character Engine</div>
+      <h1>Desi Story Characters & Game Art</h1>
+      <p class="subtitle">
+        High-retention, stylized 3D characters designed for viral Pakistani & ancient history storytelling videos.
+        Seamlessly rendered, voiced, and auto-uploaded to YouTube from GitHub Actions.
+      </p>
+      <div class="top-nav">
+        <a href="/" class="nav-btn">🏠 Horde Dashboard</a>
+        <a href="/multan.html" class="nav-btn">🏛️ Multan 20-Min Documentary</a>
+        <a href="https://github.com/ayubkhokhar7733/story-flow/actions" target="_blank" class="nav-btn primary">⚡ GitHub Actions Pipeline</a>
+      </div>
+    </header>
+
+    <!-- Character Cards Grid -->
+    <div class="character-grid">
+      <!-- 1. Chacha Bashir -->
+      <div class="char-card">
+        <div class="img-box">
+          <img src="/characters/chacha_bashir.jpg" alt="Chacha Bashir Rickshaw Driver">
+          <div class="avatar-badge">
+            <img src="/characters/chacha_bashir_avatar.jpg" alt="Chacha Bashir Avatar">
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="char-role">Urban Explorer & Driver</div>
+          <div class="char-name">Chacha Bashir</div>
+          <div class="char-desc">
+            The beloved, fast-talking Lahore rickshaw driver. Dressed in emerald green truck-art embroidered waistcoat and aviator sunglasses, navigating through iconic Lahore streets.
+          </div>
+          <div class="catchphrase-box">
+            "Hold tight, boss! You're riding with Bashir, and Lahore's secrets don't wait!"
+          </div>
+          <div class="card-footer">
+            <div class="voice-badge">🎙️ GuyNeural / AsadNeural</div>
+            <a href="https://github.com/ayubkhokhar7733/story-flow/actions/workflows/generate-story-video.yml" target="_blank" class="action-btn">Use in Story</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Zainab the Explorer -->
+      <div class="char-card">
+        <div class="img-box">
+          <img src="/characters/zainab_explorer.jpg" alt="Zainab Archaeologist">
+          <div class="avatar-badge">
+            <img src="/characters/zainab_avatar.jpg" alt="Zainab Avatar">
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="char-role">Heritage Archaeologist</div>
+          <div class="char-name">Zainab the Explorer</div>
+          <div class="char-desc">
+            A brilliant 24-year-old archaeologist equipped with brass goggles and field satchel. She investigates ancient ruins, hidden passages, and 5,000-year-old Indus Valley secrets.
+          </div>
+          <div class="catchphrase-box">
+            "History isn't buried in silent dust—it's speaking right beneath our feet!"
+          </div>
+          <div class="card-footer">
+            <div class="voice-badge">🎙️ JennyNeural / UzmaNeural</div>
+            <a href="https://github.com/ayubkhokhar7733/story-flow/actions/workflows/generate-story-video.yml" target="_blank" class="action-btn">Use in Story</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Raja Veer -->
+      <div class="char-card">
+        <div class="img-box">
+          <img src="/characters/raja_veer.jpg" alt="Raja Veer Ancient Guardian">
+          <div class="avatar-badge">
+            <img src="/characters/raja_veer_avatar.jpg" alt="Raja Veer Avatar">
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="char-role">Citadel Guardian Prince</div>
+          <div class="char-name">Raja Veer (326 BC)</div>
+          <div class="char-desc">
+            Ancient Mallian warrior prince who defended Multan's Citadel against Alexander the Great. Armed with embossed bronze armor, peacock plume turban, and curved steel talwar.
+          </div>
+          <div class="catchphrase-box">
+            "Five thousand summers this citadel has stood. No conqueror breaks our resolve!"
+          </div>
+          <div class="card-footer">
+            <div class="voice-badge">🎙️ ChristopherNeural / AsadNeural</div>
+            <a href="https://github.com/ayubkhokhar7733/story-flow/actions/workflows/generate-story-video.yml" target="_blank" class="action-btn">Use in Story</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Baba Fazal -->
+      <div class="char-card">
+        <div class="img-box">
+          <img src="/characters/baba_fazal.jpg" alt="Baba Fazal Storyteller">
+          <div class="avatar-badge">
+            <img src="/characters/baba_fazal_avatar.jpg" alt="Baba Fazal Avatar">
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="char-role">Sage of Walled City</div>
+          <div class="char-name">Baba Fazal</div>
+          <div class="char-desc">
+            The gentle chai stall storyteller outside Wazir Khan Mosque. Serving steaming cardamom chai from a gleaming brass samovar while narrating folk legends under glowing lanterns.
+          </div>
+          <div class="catchphrase-box">
+            "Sip your tea slowly, child. Every stone in this ancient alley has a soul to whisper."
+          </div>
+          <div class="card-footer">
+            <div class="voice-badge">🎙️ EricNeural / AsadNeural</div>
+            <a href="https://github.com/ayubkhokhar7733/story-flow/actions/workflows/generate-story-video.yml" target="_blank" class="action-btn">Use in Story</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live Studio & YouTube Integration -->
+    <div class="studio-box">
+      <h2>🚀 Live YouTube & Cloud Generation</h2>
+      <p>
+        StoryFlow is connected to your test YouTube channel (<strong>Chronicles of Stone</strong>). You can trigger video creation completely on GitHub Actions without running local rendering.
+      </p>
+
+      <div class="workflow-info">
+        <div class="info-card">
+          <h4>📺 Direct YouTube Upload</h4>
+          <p>
+            When a video is created, it is automatically uploaded to your test YouTube channel as <code>unlisted</code>, generating an instant shareable link.
+          </p>
+        </div>
+        <div class="info-card">
+          <h4>🎭 Character Consistency</h4>
+          <p>
+            Scripts, visual prompts, and neural TTS automatically adopt the selected character's persona, vocal timbre, and signature visual tokens.
+          </p>
+        </div>
+        <div class="info-card">
+          <h4>⚡ Zero GPU Burden</h4>
+          <p>
+            FFmpeg Ken Burns motion, subtitle burning, and rendering run entirely on GitHub Actions runners with 100% cloud automation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

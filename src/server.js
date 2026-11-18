@@ -450,9 +450,9 @@ app.get('/api/story/stream', (req, res) => {
   });
 });
 
-// Start Express server
-app.listen(port, () => {
-  console.log(`\n🚀 AI Horde Integration Server listening at http://localhost:${port}`);
+// Start Express server on 0.0.0.0 for universal IPv4/IPv6 dual-stack access
+app.listen(port, '0.0.0.0', () => {
+  console.log(`\n🚀 AI Horde & Story-Flow Server listening at http://localhost:${port} and http://127.0.0.1:${port}`);
   console.log(`🌐 Base URL:      ${hordeClient.baseUrl}`);
   console.log(`🔑 API Key:       ${hordeClient.apiKey === '0000000000' ? '0000000000 (Anonymous Free Tier)' : hordeClient.apiKey.slice(0, 6) + '...'}`);
   console.log(`🏷️  Client-Agent:  ${hordeClient.clientAgent}\n`);

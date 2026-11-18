@@ -6,6 +6,7 @@ import os
 import re
 import requests
 import config
+from core.character_engine import character_engine
 
 SYSTEM_PROMPT = """You are a master storyteller for a viral, high-retention cartoon & illustrated story YouTube channel.
 Your goal is to write captivating, emotional, and visually imaginative stories where each scene is paired with a vivid, literal cartoon image prompt that precisely illustrates what the narrator speaks.
@@ -20,14 +21,19 @@ RULES FOR VIRAL RETENTION:
 5. FORMAT: You MUST return strictly valid JSON matching the exact schema specified, with no markdown or extraneous text.
 """
 
-def generate_story_script(topic: str, target_seconds: int = 60) -> dict:
+def generate_story_script(topic: str, target_seconds: int = 60, character_id: str = None) -> dict:
     """
     Generate a complete storytelling script structured into scenes.
     For target_seconds=60: ~8-10 micro-scenes.
+    Optionally anchors narration and visuals to a registered character (e.g. 'chacha_bashir', 'zainab_explorer').
     """
     # Calculate scene count: ~6.5 seconds per scene for fast engaging cuts
     scene_count = max(4, round(target_seconds / 6.5))
     target_words = round(target_seconds * 2.4)  # ~144 words for 60 seconds
+
+    char_data = character_engine.get_character(character_id) if character_id else None
+    char_system_addon = character_engine.get_system_prompt_addition(character_id) if character_id else ""
+    full_system_prompt = SYSTEM_PROMPT + char_system_addon
 
     user_prompt = f"""Write an engaging illustrated cartoon story about: "{topic}".
 
@@ -35,14 +41,23 @@ SPECIFICATIONS:
 - Target Duration: ~{target_seconds} seconds
 - Total Scenes: Exactly {scene_count} scenes
 - Total Word Count: Approximately {target_words} words across all {scene_count} scenes combined (~15-18 words per scene)
+"""
+    if char_data:
+        user_prompt += f"""
+- Featured Protagonist & Narrator: {char_data.get('name')} ({char_data.get('title')})
+- Style: {char_data.get('appearance', {}).get('art_style', 'Stylized 3D game art')}
+- Catchphrase to weave into the opening or climax: "{char_data.get('personality', {}).get('english_catchphrase')}"
+"""
 
+    user_prompt += f"""
 CRITICAL INSTRUCTION FOR VISUAL PROMPTS:
 Each scene's visual prompt MUST be a literal, specific illustration of what is spoken in that scene's narration. The viewer MUST see what they hear.
 
 OUTPUT FORMAT (Must be valid JSON only):
 {{
   "title": "Captivating Story Title",
-  "character_anchor": "Brief consistent visual description of main character (e.g. an elderly clockmaker Silas with silver spectacles and an apron)",
+  "character_id": "{character_id or ''}",
+  "character_anchor": "{char_data.get('visual_tokens', '') if char_data else 'Brief consistent visual description of main character'}",
   "scenes": [
     {{
       "scene_id": 1,
