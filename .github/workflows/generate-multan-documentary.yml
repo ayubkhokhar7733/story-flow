@@ -1,0 +1,115 @@
+name: Render 20-Minute Multan Documentary
+
+on:
+  workflow_dispatch:
+    inputs:
+      chapter:
+        description: 'Chapter to render (0 for full 20-minute master documentary, or 1-9 for a single chapter)'
+        required: true
+        default: '0'
+        type: choice
+        options:
+          - '0' # Full 20-Minute Master Documentary (All 9 Chapters)
+          - '1' # Prologue: The Fortress Empires Bled For
+          - '2' # Act I: Mulasthana & The Sun Temple
+          - '3' # Act II: Alexander the Great & The Mallians (326 BCE)
+          - '4' # Act III: The House of Gold & Arab Umayyads
+          - '5' # Act IV: The Invasions of Fire & Mongol Shield
+          - '6' # Act V: The City of Saints & Kashigari Blue
+          - '7' # Act VI: Mughals, Afghans & Ranjit Singh
+          - '8' # Act VII: The Gunpowder Cataclysm & British Siege (1848)
+          - '9' # Epilogue: The Eternal City
+      voice:
+        description: 'Narrator Voice'
+        required: true
+        default: 'christopher'
+        type: choice
+        options:
+          - 'christopher' # English Deep Cinematic Narrator (Recommended)
+          - 'ryan'        # English British Historical Documentary
+          - 'guy'         # English Engaging Storyteller
+          - 'jenny'       # English Female Narrator
+          - 'asad'        # Urdu Male Narrator (Pakistan)
+          - 'salman'      # Urdu/Hindi Male Narrator
+      aspect:
+        description: 'Aspect Ratio'
+        required: true
+        default: '16:9'
+        type: choice
+        options:
+          - '16:9' # Widescreen 1080p (YouTube Standard)
+          - '9:16' # Vertical 1080x1920 (Shorts Format)
+
+jobs:
+  render-documentary:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install System Dependencies (FFmpeg)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
+      - name: Install Python Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Step 1 - Generate Documentary Narration
+        run: |
+          echo ">> Synthesizing neural audio narration using ${{ github.event.inputs.voice }}..."
+          python -c "
+          import asyncio
+          from documentaries.multan_20min.generate_audio import synthesize_scenes
+          voice_map = {
+              'christopher': 'en-US-ChristopherNeural',
+              'ryan': 'en-GB-RyanNeural',
+              'guy': 'en-US-GuyNeural',
+              'jenny': 'en-US-JennyNeural',
+              'asad': 'ur-PK-AsadNeural',
+              'salman': 'ur-IN-SalmanNeural'
+          }
+          chosen_voice = voice_map.get('${{ github.event.inputs.voice }}', 'en-US-ChristopherNeural')
+          asyncio.run(synthesize_scenes(voice=chosen_voice))
+          "
+
+      - name: Step 2 - Render Documentary Video
+        run: |
+          echo ">> Rendering Multan Documentary (Chapter: ${{ github.event.inputs.chapter }}, Aspect: ${{ github.event.inputs.aspect }})..."
+          python documentaries/multan_20min/render_documentary.py \
+            --chapter ${{ github.event.inputs.chapter }} \
+            --aspect "${{ github.event.inputs.aspect }}"
+
+      - name: List Generated Videos
+        run: |
+          echo "### Generated Documentary Videos:"
+          ls -lh output/
+          ls -lh documentaries/multan_20min/chapters_rendered/ || true
+
+      - name: Upload Master Documentary Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: multan-20min-documentary-${{ github.run_id }}
+          path: |
+            output/*.mp4
+            documentaries/multan_20min/chapters_rendered/*.mp4
+          retention-days: 14
+
+      - name: Summary
+        run: |
+          echo "## 🏛️ Multan 5,000-Year Historical Documentary Rendered!" >> $GITHUB_STEP_SUMMARY
+          echo "- **Title:** The City of Gold and Blood: 5,000 Years of Multan" >> $GITHUB_STEP_SUMMARY
+          echo "- **Target Chapter:** ${{ github.event.inputs.chapter }} (0 = Full 20-min master)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Format:** ${{ github.event.inputs.aspect }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Voice:** ${{ github.event.inputs.voice }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Download:** Check the **Artifacts** tab to download your completed Full HD documentary video!" >> $GITHUB_STEP_SUMMARY
