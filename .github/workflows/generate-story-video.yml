@@ -129,9 +129,9 @@ jobs:
         with:
           name: story-video-${{ github.run_id }}
           path: |
-          output/**
-          !output/**/*.mp4
-          !output/*.mp4/*.mp4
+            output/**
+            !output/**/*.mp4
+            !output/*.mp4
           retention-days: 1
 
       - name: Job Summary
