@@ -101,7 +101,9 @@ jobs:
         with:
           name: multan-20min-documentary-${{ github.run_id }}
           path: |
-            output/*.mp4
+            output/**
+            !output/**/*.mp4
+            !output/*.mp4
             documentaries/multan_20min/chapters_rendered/*.mp4
           retention-days: 1
 
