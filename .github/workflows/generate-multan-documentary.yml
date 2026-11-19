@@ -103,7 +103,7 @@ jobs:
           path: |
             output/*.mp4
             documentaries/multan_20min/chapters_rendered/*.mp4
-          retention-days: 14
+          retention-days: 1
 
       - name: Summary
         run: |
